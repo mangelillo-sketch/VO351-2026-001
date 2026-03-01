@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Esercizio 03" />
+    <title>Esercizio 03</title>
+    <style>
+      /* Page layout reset */
+      body {
+        margin: 0;
+      }
+
+      #page-main {
+        margin: auto;
+        max-width: 90%;
+      }
+      /* end Page layout reset */
+
+      /* Header */
+      #page-title {
+        font-family: monospace;
+        font-style: oblique;
+        margin: 0;
+        padding: 1rem 1.25rem;
+      }
+      #page-header {
+        background-color: #777;
+      }
+      /* Navigation */
+      #page-header ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: #bbb;
+        padding: 1.25rem;
+      }
+      #page-header ul li {
+        display: inline-block;
+        margin-right: 1.25rem;
+        color: white;
+      }
+      /* end Navigation */
+      /* end Header */
+
+      
+
+      /* Article - left */
+      #page-main article {
+        float: left;
+        max-width: 70%;
+        padding: 1.25rem;
+        border-right: #777 solid 1px;
+      }
+      /* end Article - left */
+
+      /* Aside - right */
+      #page-main aside {
+        float: left;
+        max-width: 30%;
+        padding: 1.25rem;
+      }
+      #page-main aside ul {
+        /* list-style-type: none; */
+        padding: 1rem;
+      }
+      #page-main aside ul li {
+        margin-bottom: 1.25rem;
+      }
+      /* end Aside - right */
+
+      /* Content adgustment */
+      #page-main article section {
+        margin-bottom: 1.25rem;
+        margin-top: 2.25rem;
+      }
+      #page-main article pre {
+        border-radius: 0.25rem;
+        border: 1px solid #777;
+        background-color: darkslategrey;
+        color: white;
+        padding: 0.25rem;
+
+      }
+      /* end Content adgustment */
+    </style>
+  </head>
+  <body>
+    <header id="page-header">
+      <h1 id="page-title">Esercizio 03</h1>
+      <nav>
+        <ul>
+          <li><a href="#" alt="link di collegamento a Home">Home</a></li>
+          <li>
+            <a href="index.html" alt="link di collegamento a Esercizio-0"
+              >Esercizio-0</a
+            >
+          </li>
+          <li>
+            <a href="esercizio-01.html" alt="link di collegamento a Esercizio-1"
+              >Esercizio-1</a
+            >
+          </li>
+          <li>
+            <a href="esercizio-02.html" alt="link di collegamento a Esercizio-2"
+              >Esercizio-2</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main id="page-main">
+      <article>
+        <h2>Creare una pagina accessibile</h2>
+        <p>Una pagina <strong>molto accessibile...</strong></p>
+        <section id="parte-01">
+          <h3>Introduzione - Parte 01</h3>
+          <p>
+            Una pagina <em>molto accessibile</em> ha bisogno di utilizzare i
+            tags <strong>semantici</strong> nel modo corretto. Di solito questi
+            tags sono <code>header</code>, <code>nav</code>, <code>main</code>,
+            <code>article</code>, <code>section</code>, <code>aside</code> e
+            <code>footer</code> per gestire il contenuto mentre
+            <code>div</code> e <code>span</code> per gestire il layout. Per
+            quanto riguarda i meta tag, bisogna utilizzare
+            <code>meta charset</code>, <code>meta name=description</code> e
+            <code>meta name=viewport</code> per indicare la codifica dei
+            caratteri, la descrizione della pagina e la dimensione dello
+            schermo. Mentre per rappresentare il contenuto testuale bisogna
+            utilizzare <code>h1-h6</code>, <code>p</code>, <code>em</code>,
+            <code>strong</code>, <code>ul</code>, <code>ol</code>,
+            <code>li</code>
+          </p>
+        </section>
+        <section id="parte-02">
+          <h3>Inizio pagina - Parte 02</h3>
+          <p>Un esempio di pagina accessibile è :</p>
+          <pre><code>
+               &lt;!DOCTYPE html&gt;
+               &lt;html lang="it"&gt;
+                  &lt;head&gt;
+                     &lt;meta charset="UTF-8"&gt;
+                     &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                     &lt;title&gt;[IL TUO NOME] - Pagina Personale&lt;/title&gt;
+                  &lt;/head&gt;
+                  &lt;body&gt; 
+                     &lt;header&gt;
+                     &lt;!-- Parte dell'header --&gt;
+                     &lt;/header&gt;
+                     &lt;main&gt;
+                     &lt;!-- Contenuto principale --&gt;
+                     &lt;/main&gt;
+                     &lt;footer&gt;
+                     &lt;!-- Parte dell'footer --&gt;
+                     &lt;/footer&gt;
+                  &lt;/body&gt;
+               &lt;/html&gt;
+            </code></pre>
+        </section>
+        <section id="parte-03">
+          <h3>Contenuto accessibile - Parte 03</h3>
+          <p>
+            Un esempio di contenuto accessibile per un articolo (dove giá h1 é
+            stato usato per il titolo della pagina...) è :
+          </p>
+          <pre><code>
+               &lt;article&gt; 
+                  &lt;h2&gt;
+                  &lt;!-- Titolo articolo --&gt;
+                  &lt;/h2&gt;
+                  &lt;p&gt;
+                  &lt;!-- Breve descrizione --&gt;
+                  &lt;/p&gt;
+                  &lt;section&gt;
+                     &lt;p&gt;
+                     &lt;!-- Vari pargarafi raggruppati in una sezione per argomenti differenti (se necessario)  --&gt;
+                     &lt;/p&gt;
+                  &lt;/section&gt;
+               
+               &lt;/article&gt;
+            </code></pre>
+        </section>
+      </article>
+      <!-- Aside per navigazione all'interno della pagina -->
+      <aside id="page-aside">
+        <h3>Indice articolo</h3>
+        <ul>
+          <li>
+            <a href="#parte-01" alt="vai a Introduzione - Parte 01"
+              >Introduzione - Parte 01</a
+            >
+          </li>
+          <li>
+            <a href="#parte-02" alt="vai a Inizion pagina - Parte 02"
+              >Inizion pagina - Parte 02</a
+            >
+          </li>
+          <li>
+            <a href="#parte-03" alt="vai a Contenuto accessibile - Parte 03"
+              >Contenuto accessibile - Parte 03</a
+            >
+          </li>
+        </ul>
+      </aside>
+      <!-- /Aside -->
+    </main>
+  </body>
+</html>
