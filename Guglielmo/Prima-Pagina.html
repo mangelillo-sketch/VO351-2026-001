@@ -9,32 +9,65 @@
     <!-- Esempio di commento(Utilizzali con cautela) -->
     
     <body>
+        <div id="header">
         <header>
             <h1>PRIMO SITO HTML</h1>
-            <p>Studente di <strong>FullStackWebDevelopment</strong></p>
+            <p>Studente di <strong style="color: blue;">FullStackWebDevelopment</strong></p>
         </header>
+        </div>
+        
+        <!-- Ho fatte alcune prove di CSS interno -->
 
         <main>
             <div class="sezione">
-                <h2>BIOGRAFIA</h2>
+                <h2 style="color: red;">BIOGRAFIA</h2>
+                <hr>
                 <p>Ciao, sono Guglielmo, un ragazzo di 28 anni che vive in Toscana.</p>
-                <img src="img/Test-immagine.webp" alt="Palla da Basket">
             </div>
             
             <div class="sezione">
-                <p>Recentemente ho inziato un percorso di studio nel mondo della programmazione FullStack.</p>
-                <p>Il mio obbiettivo è quello di costruirmi un futuro solido e professionale in questo settore poichè mi sta realmente appassionando.</p>
-                <p>Sono solo all'inizio del mio percorso, ma ogni giorno è un passo avanti, questa pagina mi servirà a rappresentare tutto ciò che andrò ad imparare.</p>
+                <p style="margin: 0;">Recentemente ho inziato un percorso di studio nel mondo della programmazione FullStack.</p>
+                <p style="margin: 0;">Il mio obbiettivo è quello di costruirmi un futuro solido e professionale in questo settore poichè mi sta realmente appassionando.</p>
+                <p style="margin: 0;">Sono solo all'inizio del mio percorso, ma ogni giorno è un passo avanti, questa pagina mi servirà a rappresentare tutto ciò che andrò ad imparare.</p>
             </div>
             
             <div class="sezione">
-                <h2>I MIEI HOBBY</h2>
+                <h2 style="color: red;">I MIEI HOBBY</h2>
                 <ul>
                     <li>Programmare</li>
                     <li>Sport</li>
                     <li>Serie TV</li>
                 </ul>
             </div>
+
+            <article class="blog-post">
+                <h1><span style="background-color: yellow;">LA MIA PRIMA SETTIMANA IMPARANDO HTML</span></h1>
+                <hr>
+
+                <div class="introduzione">
+                    <p style="margin: 0;">Dopo qualche lezione finalmente cominciamo a scrivere le prime linee di codice <strong>html</strong>,non vedevo l'ora!</p>
+                    <p style="margin: 0;">Vediamo cosa abbiamo imparato.</p>
+                </div>
+
+                <div class="sezione">
+                    <h2 style="color: red;">COSA HO IMPARATO</h2>
+                    <ul>
+                        <li>La struttura base con <strong>DOCTYPE, html, head, body</strong></li>
+                        <li>I tagi di testo come <code>p</code>, <code>h1-h6</code>, <code>li</code></li>
+                        <li> I contenitori <em>div</em>, <em>span</em></li>
+                    </ul>
+                </div>
+
+                <div class="sezione">
+                    <h2 style="color: red;">LE MIE DIFFICOLTÀ</h2>
+                    <p style="margin: 0;">Le difficoltà principali son quelle di ricordarsi a memoria tutti i tag, stare attenti alla semantica e alla sintassi, essendo un novizio cerco di stare attento ad ogni piccolo dettaglio.</p>
+                    <p style="margin: 0;">Le mie basi informatiche sono poche quindi impiego più tempo ad assimilare questi concetti, ma per fortuna abbiamo un ottimo docente e un gruppo di ragazzi intelligenti e altruisti</p>
+                </div>
+
+                <div class="conclusione">
+                    <p>Il motto di questo percorso sarà <span style="text-decoration: underline;"><strong><em>SCRIVERE CODICI, SCRIVERE CODICI, SCRIVERE CODICI!</em></strong></span></p>
+                </div>
+            </article>
         </main>
     </body>
 </html>
