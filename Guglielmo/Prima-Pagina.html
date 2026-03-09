@@ -8,20 +8,24 @@
 
     <!-- Esempio di commento(Utilizzali con cautela) -->    
     <body>
-        <div id="header">
         <header>
             <h1>PRIMO SITO HTML</h1>
-            <p>Studente di <strong style="color: blue;">FullStackWebDevelopment</strong></p>
-
         </header>
-        </div>
+
+        <nav id="menu-interno">
+            <ul>
+                <li><a href="#biografia" title="Vai alla biografia">Chi sono</a></li>
+                <li><a href="#portfolio" title="Vai alla sezione portfolio">Progetti</a></li>
+                <li><a href="#contatti" title="Vai alle informazioni di contatto">Contatti</a></li>
+            </ul>            
+        </nav>
         
         <!-- Ho fatte alcune prove di CSS interno -->
         <main>
-            <div class="sezione">
+            <div class="sezione" id="biografia">
                 <h2 style="color: red;">BIOGRAFIA</h2>
                 <hr>
-                <p>Ciao, sono Guglielmo, un ragazzo di 28 anni che vive in Toscana.</p>
+                <p>Ciao, sono Guglielmo, un ragazzo di 28 anni che vive in Toscana e sono uno studente di <strong style="color: blue;">FullStackWebDevelopment</strong>.</p>
 
                 <!-- Immagine inserita -->
                 <img src="img/IMG_9352.webp" alt="Guglielmo Ferraro, studente FullStack">
@@ -65,8 +69,8 @@
                     <h2 style="color: red;">COSA HO IMPARATO</h2>
                     <ul>
                         <li>La struttura base con <strong>DOCTYPE, html, head, body</strong></li>
-                        <li>I tagi di testo come <code>p</code>, <code>h1-h6</code>, <code>li</code></li>
-                        <li> I contenitori <em>div</em>, <em>span</em></li>
+                        <li>I tag di testo come <code>p</code>, <code>h1-h6</code>, <code>li</code></li>
+                        <li>I contenitori <em>div</em>, <em>span</em></li>
                     </ul>
                 </div>
 
@@ -88,13 +92,13 @@
                 <article>
                     <h3><span style="background-color: yellow;"><strong>Conta il tempo</strong></span></h3>
                     <p>Esercizio in JavaScript dove dato un numero di secondi, viene calcolato il tempo corrispondente in ore, minuti e secondi.</p>
-                    <a href="Progetti/conta-il-tempo.js">Vedi il progetto</a>
+                    <a href="Progetti/conta-il-tempo.html" target="_blank" rel="noopener">Vedi il progetto</a>
                 </article>
 
                 <article>
                     <h3><span style="background-color: yellow;"><strong>Il conta cifre</strong></span></h3>
                     <p>Esercizio in JavaScript in cui scrivo un programma dove dato un numero conta da quante cifre è formato.</p>
-                    <a href="Progetti/il-conta-cifre.js">Vedi il progetto</a>
+                    <a href="Progetti/il-conta-cifre.html" target="_blank" rel="noopener">Vedi il progetto</a>
                 </article>
             </section>
 
@@ -110,8 +114,20 @@
             </section>
 
             <!-- Contenuti embed(video,mappe)-->
-            <div>
-            </div>
+            <section>
+                <h2 style="color: red;">DOVE MI TROVI</h2>
+                <p>Studio: Via Monte Nero 5/a, 57023 Cecina(LI)</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5806.648617295521!2d10.517120951736791!3d43.307470027950814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d5fdf6c7d13b11%3A0x255332a751325e8d!2sCecina!5e0!3m2!1sit!2sit!4v1773072917561!5m2!1sit!2sit"
+                       sandbox="allow-scripts"
+                       width="450"
+                       height="300"
+                       style="border:0;"
+                       allowfullscreen=""
+                       loading="lazy"
+                       referrerpolicy="no-referrer-when-downgrade"
+                       title ="Mappa della città di Cecina">
+                    </iframe>
+            </section>
         </main>
     </body>
 </html>
