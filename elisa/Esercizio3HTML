@@ -7,21 +7,19 @@
 </head>
 <body>
  <header> 
-    <img src="io.ARW“
-          alt="Elisa Contò, Web Designer" 
-         width="200“
-          height="200">
+    <img src="io.png"
+          alt="Elisa Contò, Web Designer"/>
      <h1>Elisa Contò</h1>
      <h2>Web Designer & Developer</h2>
-      <p>Da 1 anno esperta nella realizzazione di sii web e con una solida formalizanione nella grafica.</p>
+      <p>Da 1 anno esperta nella realizzazione di siti web e con una solida formalizanione nella grafica.</p>
        <nav>
         <a href=https://www.linkedin.com/in/elisa-cont%C3%B3-1ab21a216/
-            target="_blank“
-            rel="noopener“
+            target="_blank"
+            rel="noopener"
             title="Profilo LinkedIn">LinkedIn</a>
         <a href=https://github.com/elisacnt
-            target="_blank“
-            rel="noopener“
+            target="_blank"
+            rel="noopener"
             title="Repository GitHub">GitHub</a> 
        </nav>
  </header>
@@ -46,7 +44,7 @@
         <h3>Informazioni</h3>
         <p>Email:
             <a href="mailto:elisaconto@icloud.com?subject=Richiesta%20collaborazione&body=Ciao%20Mario,%20ti%20scrivo%20per...">
-               mario@esempio.com
+               elisaconto@icloud.com
            </a>
         </p>
         <p>Telefono:
