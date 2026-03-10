@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Esercizio 03" />
+    <title>Esercizio 04</title>
+    <style>
+      /* Page layout reset */
+      body {
+        margin: 0;
+      }
+
+      #page-main {
+        margin: auto;
+        max-width: 99%;
+      }
+      /* end Page layout reset */
+
+      /* Header */
+      #page-header {
+        padding: 1.25rem;
+      }
+      #page-title {
+        display: inline-block;
+        font-family: monospace;
+        font-style: oblique;
+        margin: 0;
+        padding: 0.75rem 1.25rem;
+        margin-left: 0.25rem;
+        vertical-align: top;
+      }
+      
+      #page-profile{
+        display: inline-block;
+        vertical-align: top;
+      }
+      /* Navigation */
+      #page-title ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        /* background-color: #bbb; */
+        padding: 0.25rem 1.25rem;
+      }
+      #page-title ul li {
+        display: inline-block;
+        margin-right: 1.25rem;
+        color: white;
+      }
+      /* end Navigation */
+      /* end Header */
+
+      
+
+      /* Article - left */
+      #page-main #page-content {
+        padding: 1.25rem;
+      }
+      /* end Article - left */
+
+      
+      /* Content adgustment */
+      .img-fluid {
+        max-width: 100%;
+        height: auto;
+      }
+
+      #portfolio article  {
+        max-width: 50%;
+        display: inline-block;
+        margin: 0 1.25rem;
+      }
+
+      .img-container {
+        height:200px;
+        overflow:hidden;
+        padding: 0.25rem;
+        border: solid 1px #777;
+        border-radius: 0.25rem;
+      }
+
+      .img-container img{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+      }
+      
+      /* end Content adgustment */
+    </style>
+  </head>
+  <body>
+    <header id="page-header">
+        <div id="page-profile">
+          <img src="src/foto-profilo.png" alt="Mario Rossi, Web Designer"  width="200"  height="200">
+        </div>
+        <div id="page-title">
+          <h1 >Enrico Fontana</h1>
+          <h2>Full stack Developer</h2>
+          <p>Appassionato di sviluppo web con 5 anni di esperienza nella creazione di siti web moderni e responsivi.</p>
+          <ul>
+            <li>
+              <a href=https://linkedin.com/
+                target="_blank"
+                rel="noopener"
+                title="Profilo LinkedIn">LinkedIn</a>
+            </li>
+            <li>
+              <a href=https://github.com/nanobarbalunga
+                target="_blank"
+                rel="noopener"
+                title="Repository GitHub">GitHub
+              </a> 
+            </li>
+          </ul>
+        </div>
+    </header>
+    <main id="page-main">
+      <div id="page-content">
+        <section id="portfolio">
+          <h2>I Miei Progetti</h2>
+          <article>
+            <h3>Sito web Aeroporto di Lampedusa</h3>
+            <div class="img-container">
+              <img src="src/lampedusa.png" class="img-fluid" alt="Screenshot del sito web con layout moderno "    >
+            </div>
+            <p>Sito web completo Agid con report dei voli realtime integrato.</p>
+            <p><a href="https://aeroportodilampedusa.it/"  target="_blank"  rel="noopener"  title="Visualizza il progetto live">Vedi il progetto live</a></p> 
+          </article>
+          <article>
+            <h3>App Mobile per dieta personalizzata</h3>
+            <div class="img-container">
+              <img src="src/f033dfbe-23a3-43f2-b2c9-b5c269abce61.jpg" class="img-fluid" alt="Screenshot Applicazione mobile per gestione di una dieta personalizzata"  >
+            </div>
+            <p>Applicazione mobile per gestione di una dieta personalizzata.</p>
+            <p><a href="https://www.dietnatural.it/app-mobile/"  target="_blank"  rel="noopener">Esplora il progetto</a></p>
+          </article>
+        </section>
+        <section id="contatti">
+          <h2>Contattami</h2>
+          <div id="contatti-info">
+              <h3>Informazioni</h3>
+              <p>Email:
+                  <a href="mailto:enrico.fontana.1988@gmail.com?subject=Richiesta%20collaborazione&body=Ciao%20Mario,%20ti%20scrivo%20per...">
+                    enrico.fontana.1988@gmail.com
+                </a>
+              </p>
+              <p>Telefono:
+                  <a href=tel:+39329
+                    title="Chiamami direttamente"> 
+                    +39 329 1234567
+                </a>
+              </p>
+              <p>SMS:
+                  <a href="sms:+39329" 
+                    title="Invia un messaggio">
+                    Invia messaggio
+                </a>
+              </p>
+          </div>
+        </section>
+        <section id="dove-sono">
+          <div id="map-info">
+            <h3>Dove Mi Trovi</h3>
+            <p>Studio: Via Salvatore Agnelli 5, 90129 Palermo</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3139.663586087613!2d13.330444276316067!3d38.10149369327196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1319ef0af6be3aed%3A0x4d7a41ce6b8b9291!2sVia%20Salvatore%20Agnelli%2C%205%2C%2090129%20Palermo%20PA!5e0!3m2!1sit!2sit!4v1773139667888!5m2!1sit!2sit" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </section>
+      </div>
+      
+    </main>
+  </body>
+</html>
