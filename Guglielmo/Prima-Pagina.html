@@ -6,34 +6,128 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
-    <!-- Esempio di commento(Utilizzali con cautela) -->
-    
+    <!-- Esempio di commento(Utilizzali con cautela) -->    
     <body>
         <header>
-            <h1><strong>PRIMO SITO HTML</strong></h1>
-            <p>Studente di <strong>FullStackWebDevelopment</strong></p>
+            <h1>PRIMO SITO HTML</h1>
         </header>
 
+        <nav id="menu-interno">
+            <ul>
+                <li><a href="#biografia" title="Vai alla biografia">Chi sono</a></li>
+                <li><a href="#portfolio" title="Vai alla sezione portfolio">Progetti</a></li>
+                <li><a href="#contatti" title="Vai alle informazioni di contatto">Contatti</a></li>
+            </ul>            
+        </nav>
+        
+        <!-- Ho fatte alcune prove di CSS interno -->
         <main>
-            <div class="sezione">
-                <h2>BIOGRAFIA</h2>
-                <p>
-                    Ciao, sono Guglielmo, un ragazzo di 28 anni che vive in Toscana.
+            <div class="sezione" id="biografia">
+                <h2 style="color: red;">BIOGRAFIA</h2>
+                <hr>
+                <p>Ciao, sono Guglielmo, un ragazzo di 28 anni che vive in Toscana e sono uno studente di <strong style="color: blue;">FullStackWebDevelopment</strong>.</p>
 
-                    Recentemente ho inziato un percorso di studio nel mondo della programmazione FullStack.
-                    Il mio obbiettivo è quello di costruirmi un futuro solido e professionale in questo settore poichè mi sta realmente appassionando.
-                    Sono solo all'inizio del mio percorso, ma ogni giorno è un passo avanti, questa pagina mi servirà a rappresentare tutto ciò che andrò ad imparare.
-                </p>
+                <!-- Immagine inserita -->
+                <img src="img/IMG_9352.webp" alt="Guglielmo Ferraro, studente FullStack">
+                <nav style="margin-bottom: 20px;">
+                    <a href="https://www.instagram.com/gugge97/"
+                        target="_blank"
+                        rel="noopener"
+                        title="Profilo Instagram">Instagram</a>
+                    <a href="https://www.twitch.tv/gugge_97"
+                        target="_blank"
+                        rel="noopener"
+                        title="Pagina Twitch">Twitch</a>
+                </nav>
             </div>
             
             <div class="sezione">
-                <h2>I MIEI HOBBY</h2>
+                <p style="margin: 0;">Recentemente ho inziato un percorso di studio nel mondo della programmazione FullStack.</p>
+                <p style="margin: 0;">Il mio obbiettivo è quello di costruirmi un futuro solido e professionale in questo settore poichè mi sta realmente appassionando.</p>
+                <p style="margin: 0;">Sono solo all'inizio del mio percorso, ma ogni giorno è un passo avanti, questa pagina mi servirà a rappresentare tutto ciò che andrò ad imparare.</p>
+            </div>
+            
+            <div class="sezione">
+                <h2 style="color: red;">I MIEI HOBBY</h2>
                 <ul>
                     <li>Programmare</li>
                     <li>Sport</li>
                     <li>Serie TV</li>
                 </ul>
             </div>
+
+            <article class="blog-post">
+                <h1>IL MIO PERCORSO IMPARANDO HTML</h1>
+                <hr>
+
+                <div class="introduzione">
+                    <p style="margin: 0;">Dopo qualche lezione finalmente cominciamo a scrivere le prime linee di codice <strong>html</strong>,non vedevo l'ora!</p>
+                    <p style="margin: 0;">Vediamo cosa abbiamo imparato.</p>
+                </div>
+
+                <div class="sezione">
+                    <h2 style="color: red;">COSA HO IMPARATO</h2>
+                    <ul>
+                        <li>La struttura base con <strong>DOCTYPE, html, head, body</strong></li>
+                        <li>I tag di testo come <code>p</code>, <code>h1-h6</code>, <code>li</code></li>
+                        <li>I contenitori <em>div</em>, <em>span</em></li>
+                    </ul>
+                </div>
+
+                <div class="sezione">
+                    <h2 style="color: red;">LE MIE DIFFICOLTÀ</h2>
+                    <p style="margin: 0;">Le difficoltà principali son quelle di ricordarsi a memoria tutti i tag, stare attenti alla semantica e alla sintassi, essendo un novizio cerco di stare attento ad ogni piccolo dettaglio.</p>
+                    <p style="margin: 0;">Le mie basi informatiche sono poche quindi impiego più tempo ad assimilare questi concetti, ma per fortuna abbiamo un ottimo docente e un gruppo di ragazzi intelligenti e altruisti</p>
+                </div>
+
+                <div class="conclusione">
+                    <p>Il motto di questo percorso sarà <span style="text-decoration: underline;"><strong><em>SCRIVERE CODICI, SCRIVERE CODICI, SCRIVERE CODICI!</em></strong></span></p>
+                </div>
+            </article>
+
+            <!-- Galleria portfolio-->
+            <section id="portfolio">
+                <h2 style="color: red;">I MIEI PROGETTI</h2>
+                <hr>
+                <article>
+                    <h3><span style="background-color: yellow;"><strong>Conta il tempo</strong></span></h3>
+                    <p>Esercizio in JavaScript dove dato un numero di secondi, viene calcolato il tempo corrispondente in ore, minuti e secondi.</p>
+                    <a href="Progetti/conta-il-tempo.html" target="_blank" rel="noopener">Vedi il progetto</a>
+                </article>
+
+                <article>
+                    <h3><span style="background-color: yellow;"><strong>Il conta cifre</strong></span></h3>
+                    <p>Esercizio in JavaScript in cui scrivo un programma dove dato un numero conta da quante cifre è formato.</p>
+                    <a href="Progetti/il-conta-cifre.html" target="_blank" rel="noopener">Vedi il progetto</a>
+                </article>
+            </section>
+
+            <!-- Sezione contatti-->
+            <section id="contatti">
+                <h2 style="color: red;">CONTATTAMI</h2>
+                <p style="margin: 0;">Email:
+                    <a href="mailto:guje97@gmail.com?subject=Richiesta%20informazioni">guje97@gmail.com</a>
+                </p>
+                <p style="margin: 0;">Telefono:
+                    <a href="Tel:+393283259123">+39 328 325 9123</a>
+                </p>
+            </section>
+
+            <!-- Contenuti embed(video,mappe)-->
+            <section>
+                <h2 style="color: red;">DOVE MI TROVI</h2>
+                <p>Studio: Via Monte Nero 5/a, 57023 Cecina(LI)</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5806.648617295521!2d10.517120951736791!3d43.307470027950814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d5fdf6c7d13b11%3A0x255332a751325e8d!2sCecina!5e0!3m2!1sit!2sit!4v1773072917561!5m2!1sit!2sit"
+                       sandbox="allow-scripts"
+                       width="450"
+                       height="300"
+                       style="border:0;"
+                       allowfullscreen=""
+                       loading="lazy"
+                       referrerpolicy="no-referrer-when-downgrade"
+                       title ="Mappa della città di Cecina">
+                    </iframe>
+            </section>
         </main>
     </body>
 </html>
