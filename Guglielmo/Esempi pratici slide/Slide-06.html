@@ -17,7 +17,7 @@
     <button type="submit">Invia</button>
 </form>    
 
-<!-- I TYPE MODERNI -->
+<!-- I Type Moderni -->
 "email" = Attiva la tastiera con @ e .com su mobile. Valida automaticamente il formato email e impedisce l'invio di dati non validi.
 "tel" = Mostra il tastierino numerico telefonico su smartphone, ottimizzato per inserire rapidamente numeri di telefono con caratteri speciali.
 "URL" = Tastiera con .com, .it e altri domini comuni. Valida che l'indirizzo inizi con http:// o https:// per garantire URL corretti.
@@ -40,3 +40,44 @@
 
 <!-- Data --><input type="date">
 
+<!-- Attributi di validazione -->
+required = Rende obbligatorio un campo. Il form non può essere inviato se il campo è vuoto. Essenziale per dati critici come nome, email o password.
+pattern = Definisce un'espressione regolare che il valore deve rispettare. Perfetto per codici fiscali, CAP, codici prodotto o qualsiasi formato specifico.
+min/max = Imposta valori minimi e massimi per numeri e date. Utile per età, quantità, periodi di prenotazione o qualsiasi range definito.
+minlength/maxlength = Controlla la lunghezza del testo inserito. Previene password troppo corte o commenti eccessivamente lunghi che potrebbero causare problemi.
+
+<!-- ESEMPI -->
+<!-- Campo obbligatorio -->
+<input type="text" name="username" required>
+
+<!-- Password con lunghezza minima -->
+<input type="password" name="pwd"
+        required minlength="8">
+
+<!-- Codice fiscale italiano (16 caratteri) -->
+<input type="text" name="cf"
+        pattern="[A-Z]{6}[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{3}[A-Z]"
+       title="Inserisci un codice fiscale valido">
+
+<!-- Età tra 18 e 99 anni -->
+<input type="number" name="age"
+        min="18" max="99" required>
+
+<!-- CAP italiano (5 cifre) -->
+<input type="text" name="cap"
+        pattern="[0-9]{5}"
+        placeholder="00100">
+
+<!-- Email obbligatoria -->
+<input type="email" name="email"
+        required>
+
+<!-- Libreria espressioni regolari -->
+CAP: [0-9]{5}
+Telefono: [0-9]{9,10}
+Cellulare: 3[0-9]{9}
+P.IVA: [0-9]{11}
+Solo lettere: [A-Za-z]+
+Alfanumerico: [A-Za-z0-9]+
+Username: [A-Za-z0-9_-]{3,16}
+Colore hex: #[0-9A-Fa-f]{6}
