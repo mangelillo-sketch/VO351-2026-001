@@ -39,3 +39,48 @@ Può essere riutilizzato su più elementi, un elemento può avere classsi multip
  Testo stilizzato direttamente
 </p>
 Permette di applicare il CSS interno, deve essere usato con moderazione per mantenere il codice pulito.
+
+<!-- Attributo Title -->
+<img src="logo.png" alt="Logo" title="Logo dell'azienda XYZ fondata nel 1995">
+<abbr title="HyperText Markup Language">HTML</abbr>
+Mostra informazioni extra quando l'utente passa il mouse sopra l'elemento, fornisce contesto aggiuntivo per screen reader e utenti con disabilità, spiega acronimi o termini tecnici.
+
+<!-- Anatomia di un layout tipico -->
+CONTAINER PRINCIPALE = Il div più esterno che contiene tutto il layout.
+HEADER = Intestazione con logo, navigazione e informazioni principali.
+MAIN CONTENT = Area principale con il contenuto più importante.
+SIDEBAR = Colonna laterale con contenuti secondari o menu.
+FOOTER = Piè di pagina con informazioni di contatto e copyright.
+
+<!-- ESEMPIO STRUTTURA HTML COMPLETA -->
+<div class="container">
+ <div class="header">
+  <div class="logo">
+    <img src="logo.png" alt="Logo">
+  </div>
+  <div class="navigation">
+   <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#prodotti">Prodotti</a></li>
+   </ul>
+  </div>
+ </div>
+ 
+ <div class="main-content">
+  <div class="content">
+   <h1>Contenuto Principale</h1>
+  </div>
+  <div class="sidebar">
+   <h3>Menu Laterale</h3>
+  </div>
+ </div>
+</div>
+
+<!-- ESEMPIO DI BADGE E RATING -->
+<div class="product-badges" style="position: relative; margin-bottom: 10px;">
+ <span class="badge-new" style="position: absolute; top: 10px; right: 10px; background-color: #27ae60; color: white; padding: 5px 10px; border-radius: 3px; font-size: 12px; font-weight: bold;">
+ NUOVO
+ </span>
+</div>
+<div class="product-rating" style="margin-bottom: 15px;">
+ <span class="stars" style="color: #f39c12; font-size: 20px;">
