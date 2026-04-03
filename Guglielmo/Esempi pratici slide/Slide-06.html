@@ -83,3 +83,78 @@ Username: [A-Za-z0-9_-]{3,16}
 Colore hex: #[0-9A-Fa-f]{6}
 
 <!-- Tabelle HTML -->
+Le tabelle HTML sono lo strumento perfetto per presentare dati tabulari: listini prezzi, orari, statistiche, confronti e qualsiasi informazione organizzata in righe e colonne.
+<table>
+ <thead>
+   <tr>
+     <th>Prodotto</th>
+     <th>Prezzo</th>
+     <th>Stock</th>
+   </tr>
+ </thead>
+ <tbody>
+   <tr> 
+     <td>Laptop</td>
+     <td>€899</td>
+     <td>15</td> 
+   </tr>
+   <tr>
+     <td>Mouse</td>
+     <td>€25</td>
+     <td>48</td>
+   </tr>
+ </tbody>
+</table>
+Table = Contenitore principale della tabella.
+Tr = Table Row, definisce una riga.
+Td = Table Data, una cella di dati.
+Th = Table Header, intestazione di colonna.
+Thead = Raggurppa le righe di intestazione.
+Tbody = Raggruppa le righe di contenuto.
+
+<!-- META TAG ESSENZIALI PER SEO -->
+Description = Il riassunto della pagina che appare nei risultati di ricerca. Deve essere coinvolgente, unico per ogni pagina, e contenere parole chiave naturalmente integrate.
+Keywords = Sebbene meno influenti oggi, indicano i termini principali della pagina. Non esagerare: 5-10 parole chiave pertinenti e specifiche sono sufficienti.
+Viewport = Fondamentale per il responsive design. Controlla come la pagina si ridimensiona su dispositivi mobili, garantendo un'esperienza ottimale su ogni schermo.
+<!-- ESEMPIO -->
+<head>
+ <meta charset="UTF-8">
+
+ <!-- Viewport per responsive -->
+ <meta name="viewport“
+  content="width=device-width, initial-scale=1.0">
+ 
+ <!-- Description per risultati ricerca -->
+ <meta name="description“
+  content="Impara HTML e CSS con tutorial
+  pratici e esempi reali. Corsi per
+  principianti e sviluppatori web.">
+ 
+ <!-- Keywords (opzionale) -->
+ <meta name="keywords“
+  content="HTML, CSS, tutorial, corso web,
+  sviluppo frontend, imparare a programmare">
+ <title>Corso HTML - Tutorial Completo</title>
+</head>
+
+<!-- Altri META TAG utili -->
+<!-- Autore della pagina -->
+<meta name="author" content="Mario Rossi">
+
+<!-- Robots: come i motori devono indicizzare -->
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph per Facebook/LinkedIn -->
+<meta property="og:title" content="Titolo per social">
+<meta property="og:description" content="Descrizione social“
+><meta property="og:image" content="immagine-anteprima.jpg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Titolo per Twitter">
+
+<!-- Canonical: previene contenuti duplicati -->
+<link rel="canonical" href="https://esempio.it/pagina">
+
+<!-- Lingua della pagina -->
+<meta http-equiv="content-language" content="it-IT">
