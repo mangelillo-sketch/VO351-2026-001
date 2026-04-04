@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+            
+            <meta name="viewport" content="widt=device-widt, initial-scale=1.0">
+            <title>Il mio form contatti</title>
+    </head>   
+    <body>   
+        <p>Contattaci compilando il form</p> 
+        <form action="destinazione.php" method="post">
+
+            <label for="nome">Nome
+                <input type="text" id="nome" name="nome" placeholder="nome" required>
+            </label>
+
+            <label for="cognome">Cognome
+                <input type="text" id="cognome" name="cognome" placeholder="cognome" required> <br />
+            </label>
+
+            <label for="email">email <br />
+                <input type="email" id="email" placeholder="email" title="Inserisci un formato emal corretto"
+                 required> <br />
+            </label>
+
+            <label for="tel">cellulare <br />
+                <input type="tel" id="tel" placeholder="cellulare" min="9" max="10"> <br /> 
+            </label>    
+
+            <label for="età">età <br /> 
+            <!-- Numero con limiti -->    
+                <input type="number" id="età" name="età" min="18" max="99" placeholder="età"> <br /> 
+            </label>  
+
+            <label for="messaggio">Scrivi la tua richiesta</label> <br />
+            <input type="text" id="messaggio" style="width:100px; height:50px;"
+            <textarea id="messaggio" placeholder="Messaggio" minlength="1" maxlength="100" ></textarea>
+
+            <button type="submit">Invia</button> <br />
+        </body>     
+        </form>
+
+
+   
+
+
+
+
+</html>
