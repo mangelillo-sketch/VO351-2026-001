@@ -1,0 +1,39 @@
+body{
+        margin: 0;
+      }
+      .content{
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      article{
+        border-radius: 6px;
+        border: 1px solid #a0a0a0;
+        box-shadow: 1px 1px 1px  #5f5f5f;
+        padding: 1.25rem;
+        max-width: 100rem;
+      }
+
+      .title-mono{
+        font-family: 'Courier New', Courier, monospace;
+      }
+      .title-sans{
+        font-family: Calibri, sans-serif;
+      }
+
+      .text-center{
+        text-align: center;
+      }
+
+      .undeline{
+        text-decoration: underline;
+      }
+
+      .bolder{
+        font-weight: bolder;
+      }
+
+      .colored{
+        background-color: green;
+        color: white;
+      }
