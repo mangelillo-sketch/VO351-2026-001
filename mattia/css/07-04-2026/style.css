@@ -1,0 +1,62 @@
+/*Font face - Definisco il mio font*/
+@font-face {
+    font-family: "Pippo";
+    src: url(fonts/jost/Jost-Italic-VariableFont_wght.ttf) format("ttf");
+    font-weight: 400;
+}
+
+/*Elemento root (radice)*/
+html{
+    font-size: 10px;
+}
+/*Reset*/
+*, html{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: darkred;
+}
+div{
+    width: 150px;
+    height: 50px;
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    color: #333333;
+    font-size: 1.5rem;
+    font-family: "Pippo";
+    font-weight: 200;
+    /*background-color: #06a8ba;*/
+    background-color: #06a8ba6a;
+    /*background-color: rgb(6, 168, 186);*/
+    /*background-color: rgba(6, 168, 186, 0.30);*/
+    /*background-color: hsl(186, 94%, 38%);*/
+}
+
+/*121*/
+div#main.container.bc-yellow{
+    border: 5px solid yellow;
+}
+/*120*/
+#main.container.bc-yellow{
+    border: 2px solid yellow;
+}
+/*110*/
+#main.container{
+    border: 2px solid red;
+}
+/*100*/
+#main{
+    border: 2px solid blue;
+}
+/*010*/
+.container{
+    border: 2px solid red;
+}
+/*001*/
+div{
+    border: 2px solid;
+}
