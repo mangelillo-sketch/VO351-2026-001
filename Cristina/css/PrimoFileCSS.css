@@ -1,0 +1,82 @@
+/* RESET BASE */
+body {
+    margin: 0;
+}
+
+/* HEADER */
+.header {
+    background-color: blue;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.header h1 {
+    margin-bottom: 10px;
+}
+
+.header p {
+    margin-bottom: 20px;
+}
+
+/* BOTTONE */
+.btn {
+    background-color: orangered;
+    color: white;
+    padding: 10px 20px;
+}
+
+.btn:hover {
+    background-color: black;
+}
+
+/* SEZIONE SERVIZI */
+.servizi {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.card {
+    background-color: white;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* FORM CONTATTO */
+.contatto {
+    background-color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+form {
+    max-width: 400px;
+    margin: auto;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+button {
+    background-color: red;
+    color: white;
+    padding: 10px;
+}
+
+button:hover {
+    background-color: black;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+    color: white;
+}
