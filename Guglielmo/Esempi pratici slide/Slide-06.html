@@ -1,0 +1,42 @@
+<input><textarea></textarea><select></select><option></option> = Sono i quattro pilastri dei form HTML.
+
+<!-- STRUTTURA BASE DI UN FORM -->
+<form action="/submit" method="POST">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome">
+
+    <label for="messaggio">Messaggio:</label>
+    <textarea id="messaggio" name="messaggio"></textarea>
+
+    <label for="paese">Paese:</label>
+    <select id="paese" name="paese">
+        <option value="it">Italia</option>
+        <option value="fr">Francia</option>
+    </select>
+
+    <button type="submit">Invia</button>
+</form>    
+
+<!-- I TYPE MODERNI -->
+"email" = Attiva la tastiera con @ e .com su mobile. Valida automaticamente il formato email e impedisce l'invio di dati non validi.
+"tel" = Mostra il tastierino numerico telefonico su smartphone, ottimizzato per inserire rapidamente numeri di telefono con caratteri speciali.
+"URL" = Tastiera con .com, .it e altri domini comuni. Valida che l'indirizzo inizi con http:// o https:// per garantire URL corretti.
+"number" = Input numerico con frecce su/giù per incrementare o decrementare. Perfetto per quantità, età o qualsiasi valore numerico.
+"date" = Apre un calendario nativo del browser per selezionare date facilmente, eliminando errori di formato e rendendo l'input intuitivo.
+
+<!-- ESEMPIO -->
+<!-- Email con validazione -->
+<input type="email"
+        placeholder="nome@esempio.it">
+
+<!-- Telefono --><input type="tel"
+        placeholder="+39 123 456 7890">
+
+<!-- URL --><input type="url"
+        placeholder="https://esempio.it">
+
+<!-- Numero con limiti --><input type="number"
+        min="1" max="100">
+
+<!-- Data --><input type="date">
+

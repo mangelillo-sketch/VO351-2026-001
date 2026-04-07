@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pagina form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Compila il form per vincere il nuovo Notebook X1"
+    />
+  </head>
+
+  <body>
+    <header>
+      <h1>COMPILA IL FORM</h1>
+    </header>
+
+    <main>
+      <form action="/URL destinazione" method="post">
+        <fieldset>
+          <legend>Dati Personali</legend>
+
+          <label for="nome">Nome:</label>
+          <input
+            type="text"
+            id="nome"
+            name="nome"
+            placeholder="Inserisci il nome"
+            required
+          />
+
+          <label for="cognome">Cognome:</label>
+          <input
+            type="text"
+            id="cognome"
+            name="cognome"
+            placeholder="Inserisci il cognome"
+            required
+          />
+
+          <label for="nascita">Data di nascita:</label>
+          <input
+            type="date"
+            id="nascita"
+            name="nascita"
+            required
+            max="2008-01-01"
+            title="Devi avere almeno 18 anni"
+          />
+          <!-- Modo alternativo a JavaScript per renderlo solo per maggiorenni -->
+          <!-- Possiamo aggiungere anche luogo di nascita, CAP e altri dati personali -->
+        </fieldset>
+
+        <fieldset>
+          <legend>Credenziali Di Accesso</legend>
+
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="nome@esempio.it"
+            required
+          />
+
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            minlength="8"
+            title="Minimo 8 caratteri"
+          />
+
+          <label for="conferma">Conferma password:</label>
+          <input
+            type="password"
+            id="conferma"
+            name="conferma"
+            required
+            minlength="8"
+          />
+        </fieldset>
+
+        <fieldset>
+          <legend>Informazioni Di Contatto</legend>
+
+          <label for="telefono">Telefono:</label>
+          <input
+            type="tel"
+            id="telefono"
+            name="telefono"
+            pattern="[0-9]{9,10}"
+            placeholder="1234567890"
+            title="Inserisci 9 o 10 cifre"
+            required
+          />
+
+          <label for="citta">Città:</label>
+          <input type="text" id="citta" name="citta" required />
+
+          <label for="provincia">Provincia:</label>
+          <select id="provincia" name="provincia" required>
+            <option value="">Seleziona...</option>
+            <option value="RM">Roma</option>
+            <option value="MI">Milano</option>
+            <option value="NA">Napoli</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend>Preferenze</legend>
+
+          <label for="newsletter">
+            <input type="checkbox" id="newsletter" name="newsletter" />
+            Iscriviti alla newsletter
+          </label>
+
+          <label for="termini">
+            <input type="checkbox" id="termini" name="termini" required />
+            Accetto termini e condizioni
+          </label>
+        </fieldset>
+
+        <button type="submit">Invia il form</button>
+      </form>
+    </main>
+  </body>
+</html>

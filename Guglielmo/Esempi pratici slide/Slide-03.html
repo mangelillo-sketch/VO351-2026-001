@@ -1,0 +1,204 @@
+<a href="destinazione">Testo del link</a> = Questo tag a(anchor) è lo srumento principale per creare collegamenti in HTML.
+
+<!-- Collegamenti interni al sito -->
+<a href="contatti.html">Contattaci</a> = Collegamento tra pagine dello stesso sito.
+<a href="#sezione1">Vai alla sezione</a> = Collegamento a sezioni specifiche.
+<a href="../index.html">Homepage</a> = Navigazione tra cartelle.
+
+<!-- Collegamenti esterni -->
+<a href="https://www.example.com">Visita Example</a>
+
+<!-- Attributo Target -->
+Serve per controllare dove si aprono i link.
+<a href="pagina.html" target="_self">Link normale</a> = Il link si apre nella stessa finestra.
+<a href="https://esterno.com" target="_blank">Nuovo tab</a> = Il link si apre in una nuova scheda.
+<a href="esterno.com" target="_self|_blank" rel="noopener">Link sicuro</a> = Qui si aggiunge sempre una protezione per prevenire eventuali problemi di sicurezza con link esterni.
+
+<!-- Attributo Title -->
+ <a href="documento.pdf" title="Scarica il manuale utente (PDF, 2MB)">Manuale</a> = Fornisce informazioni aggiuntive al passaggio del mouse sul link.
+Viene utilizzato per: descrivere il contenuto della destinazione, indicare il tipo di file(PDF,DOC,ecc...), specificare se il link è esterno, fornire informazioni sulla dimensione del file.
+
+<img> = Questo tag ci permette di aggiungere immagini al nostro sito.
+<img src="immagine.jpg" alt="Descrizione immagine"> = Gli attributi src, alt, width, height sono essenziali per questo tag.
+<!-- Attributo Alt -->
+Questo attributo è una necessità etica e legale, permette l'accessibilità a utenti con disabilità visive.
+<!-- ESEMPIO -->
+<img src="grafico-vendite.png"
+      alt="Grafico che mostra l'aumento delle vendite del 25% nel Q3 2024">
+ <img src="team-photo.jpg"
+      alt="Il team di sviluppo di 8 persone sorridente in ufficio">     
+<img src="logo-azienda.png"
+      alt="Logo di TechCorp - scritta blu su sfondo bianco">
+
+<img src="foto.jpg" alt="Descrizione" width="300" height="200"> = Servono per aggiustare le dimensioni dell'immagine.
+
+<!-- Formati di immagine -->
+.jpg = Ideale per fotografie e immagini con molti colori. Buona compressione ma perde qualità. Non supporta trasparenze.
+.png = Perfetto per loghi, icone e immagini con trasparenze. Qualità lossless ma file più pesanti delle JPEG.
+.webp = Formato moderno con compressione superiore. Supportato da browser recenti, ottimo per performance web.
+.svg = Grafica vettoriale scalabile senza perdita di qualità. Ideale per icone, loghi e illustrazioni semplici.
+
+<!-- Collegamento con email -->
+<a href="mailto:info@esempio.com">Contattaci</a> = Apre il client di posta predefinito con l'indirizzo già inserito.
+<a href="mailto:supporto@sito.com?subject=Richiesta informazioni">Scrivi al supporto</a> = Pre-compila l'oggetto dell'email per maggiore convenienza.
+<a href="mailto:vendite@azienda.com?subject=Richiesta%20preventivo&cc=manager@azienda.com&body=Salve,%20vorrei%20informazioni">Richiedi preventivo</a> Include CC e testo predefinito per email strutturate.
+
+<iframe></iframe> = Permette di incorporare contenuti esterni direttamente nella pagina: mappe, video, form esterni, applicazioni web.
+<!-- ESEMPIO -->
+<iframe src=https://esempio.com
+         width="600“
+         height="400“
+         title="Descrizione contenuto">
+</iframe>
+
+YouTube fornisce codici iframe pronti per l'uso.
+Parametri utili per YouTube: ?autoplay=1 - Avvio automatico (sconsigliato per UX), ?controls=0 - Nasconde i controlli, ?start=30 - Inizia dal secondo 30.
+<!-- ESEMPIO -->
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/ID_VIDEO" 
+        title="Titolo del video"
+        frameborder="0" 
+        allowfullscreen>
+</iframe>
+
+Anche Google Maps può essere integrato con <iframe></iframe>
+
+<iframe src="contenuto.html" sandbox="allow-scripts"></iframe> = Sandbox per la sicurezza che previene potenziali problemi da contenuti non fidati.
+<iframe src="video.html" loading="lazy"></iframe> = Migliora le performance, carica l'iframe solo quando diventa visibile nel viewport.
+<iframe src="mappa.html" title="Mappa della sede aziendale"></iframe> = Includi sempre il title perchè aiuta gli screen reader a comprendere meglio l'iframe.
+
+<!-- Altri tag specifici -->
+<a href="tel:+393341234567">Chiamaci</a> = Link telefonici.
+<a href="sms:+393341234567">Invia SMS</a> = Messaggi diretti.
+<a href="documento.pdf" download>Scarica PDF</a> = File scaricabili.
+
+<!-- ESEMPIO PRATICO DI STRUTTURA COMPLETA CON LE CONOSCENZE DI ORA -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Il Mio Profilo - Web Designer</title>
+</head>
+<body>
+ <header> 
+    <img src="foto-profilo.jpg"
+          alt="Mario Rossi, Web Designer"
+         width="200"
+          height="200">
+     <h1>Mario Rossi</h1>
+     <h2>Web Designer & Developer</h2>
+      <p>Appassionato di design digitale con 5 anni di esperienza nella creazione di siti web moderni e responsivi.</p>
+       <nav>
+        <a href=https://linkedin.com/in/mariorossi
+            target="_blank“
+            rel="noopener“
+            title="Profilo LinkedIn">LinkedIn</a>
+        <a href=https://github.com/mariorossi
+            target="_blank“
+            rel="noopener“
+            title="Repository GitHub">GitHub</a> 
+       </nav>
+</header>
+  <main>
+    <section id="portfolio">
+    <h2>I Miei Progetti</h2>
+  <article>
+ <h3>Sito E-commerce Fashion</h3>
+ <img src="progetto1.jpg"  alt="Screenshot del sito e-commerce con layout moderno e catalogo prodotti"  width="400"  height="300">
+  <p>Sito e-commerce completo per brand di moda con catalogo prodotti, carrello e pagamenti integrati.</p>
+  <p><a href="https://progetto1.esempio.com"  target="_blank"  rel="noopener"  title="Visualizza il progetto live">Vedi il progetto live</a></p> 
+</article>
+  <article>
+ <h3>App Web per Ristorante</h3>
+ <img src="progetto2.jpg"  alt="Interfaccia app ristorante con menu digitale e sistema prenotazioni"  width="400"  height="300">
+  <p>Applicazione web responsive per gestione menu digitale e prenotazioni online.</p>
+  <p><a href="https://progetto2.esempio.com"  target="_blank"  rel="noopener">Esplora il progetto</a></p>
+ </article>
+</section>
+    <section id="contatti"> 
+        <h2>Contattami</h2>
+        <div>
+        <h3>Informazioni</h3>
+        <p>Email:
+            <a href="mailto:mario@esempio.com?subject=Richiesta%20collaborazione&body=Ciao%20Mario,%20ti%20scrivo%20per...">
+               mario@esempio.com
+           </a>
+        </p>
+        <p>Telefono:
+            <a href=tel:+393341234567
+               title="Chiamami direttamente"> 
+              +39 334 123 4567
+           </a>
+        </p>
+        <p>SMS:
+            <a href="sms:+393341234567" 
+              title="Invia un messaggio">
+               Invia messaggio
+           </a>
+        </p>
+    </div>
+    </section>
+    <div>
+    <h3>Dove Mi Trovi</h3>
+    <p>Studio: Via Roma 123, 20100 Milano</p>
+        <iframe src=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.1234...
+             width="100%"
+             height="300"
+             style="border:0;"
+             allowfullscreen=""
+             loading="lazy"
+             referrerpolicy="no-referrer-when-downgrade"
+            title="Mappa della posizione dello studio a Milano">
+    </iframe>
+</div>
+<section id="video-presentazione">
+ <h2>Chi Sono - Video Presentazione</h2>
+  <iframe width="560"  height="315" 
+       src=https://www.youtube.com/embed/dQw4w9WgXcQ
+       title="Video presentazione di Mario Rossi - Web Designer"
+       frameborder="0"  
+       allow="accelerometer; 
+       autoplay;
+       clipboard-write;
+       encrypted-media; gyroscope; 
+       picture-in-picture; 
+       web-share"  
+       allowfullscreen> 
+  </iframe>
+  <p>Nel video racconto la mia passione per il web design e mostro alcuni progetti in dettaglio.</p>
+</section>
+<a href="cv-mario-rossi.pdf"
+  download="CV-Mario-Rossi-WebDesigner.pdf"
+  title="Scarica il mio CV in formato PDF">
+ </main>
+</body>
+</html>
+
+<!-- Menù interno -->
+<nav id="menu-interno">
+    <ul> 
+       <li><a href="#portfolio" 
+               title="Vai alla sezione portfolio">
+               Portfolio
+            </a>
+       </li>
+       <li><a href="#contatti" 
+               title="Vai alle informazioni di contatto"> 
+              Contatti
+            </a>
+        </li>
+        <li><a href="#video-presentazione" 
+               title="Guarda il video di presentazione"> 
+              Video 
+           </a>
+        </li>
+    </ul>
+</nav>
+SOLITAMENTE SI METTE DOPO L'HEADER E PRIMA DEL MAIN.
+
+
+
+
+
+
+
