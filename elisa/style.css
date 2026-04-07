@@ -1,0 +1,18 @@
+form {
+    border: 7px solid blue;
+    color: green;
+    
+}
+
+h2{
+    text-decoration: underline;
+}
+
+form div{
+    border: 2px solid;
+    
+}
+
+button{
+    clear: both;
+}
