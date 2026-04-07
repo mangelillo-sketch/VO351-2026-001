@@ -48,6 +48,44 @@ sezioni, fondamentale per creare strutture complesse con CSS, facilita l'applica
     <p>Prezzo: €899</p>
 </div>
 
+<span></span> = Elemento INLINE(opposto di blocco), non va a capo, occupa solo lo spazio del contenuto, perfetto per formattare parti di testo, non aggiunge significato semantico.
+<!-- ESEMPIO -->
+<p>Il prezzo è <span class="prezzo">€29.99</span> e include la spedizione gratuita.</p>
+
+"class" e ID sono attributi fondamentali.
+<!-- ESEMPIO CLASS = " nome-classe" -->
+<div class="container">
+<p class="testo-blu">Paragrafo blu</p>
+<p class="testo-blu">Altro paragrafo blu</p>
+</div>
+Class = Può essere utilizzato su più elementi, ideale per stili CSS ripetuti.
+<!-- ESEMPIO ID = "nome-id" -->
+<div id="header">
+<h1 id="titolo-principale">Il Mio Blog</h1>
+</div>
+ID = Deve essere unico nella pagina, serve per elementi specifici e JavaScript.
+<!-- ESEMPIO STRUTTURA COMPLETA -->
+ <!DOCTYPE html>
+<html lang="it">
+<head>
+ <meta charset="UTF-8">
+ <title>Il Mio Blog</title>
+</head>
+<body>
+ <div id="header">
+ <h1>Il Mio Blog Personale</h1>
+ <p>Benvenuti nel mio <em>fantastico</em> blog!</p>
+ </div>
+  <div class="articolo">
+ <h2>Il Mio Primo Post</h2>
+ <p>Questo è il <strong>primo articolo</strong> del mio blog.</p>
+ <p>Parlerò di <span class="argomento">sviluppo web</span>.</p>
+ </div>
+</body>
+</html>
+
+
+
 
 
 
