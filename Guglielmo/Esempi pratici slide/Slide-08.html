@@ -1,0 +1,108 @@
+<!-- Proprietà fondamentali CSS -->
+Font e Tipografia, Colori, Spaziature, Box Model.
+
+<!-- FONT -->
+Font-family = Definisce il carattere tipografico da utilizzare.
+Font-size = Controlla la dimensione del testo.
+Font-weight = Determina lo spessore del carattere.
+Line-height = Gestisce l'interlinea e la spaziatura verticale.
+
+Stack di font = font-family: "Arial", "Helvetica", sans-serif;
+
+<!-- FONT SIZE -->
+px(pixel) = Dimensione fissa, precisa ma non scalabile.
+pt(punti) = Utilizzato principalmente per la stampa.
+em = Relativo al font-size dell'elemento genitore.
+rem = Relativo al font-size dell'elemento root (html).
+% = Percentuale del font-size genitore.
+
+<!-- FONT WEIGHT -->
+Valore numerico da 100 a 900.
+normal = 400.
+bold(Titoli) = 700.
+lighter/bolder = Relativi al genitore.
+
+<!-- LINE HEIGHT -->
+Il line-height definisce l'altezza totale di una riga di testo, includendo il contenuto e lo spazio verticale sopra e sotto. È cruciale per la leggibilità e il comfort visivo.
+
+Numero puro(consigliato) = 1.5
+Percentuale = 150% relativa al font-size.
+Unità fisse = 24px, valore assoluto.
+
+<!-- ESEMPIO -->
+p {
+  font-family: "Georgia", serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #333333;
+}
+
+<!-- Colori esadecimali -->
+Il formato esadecimale rappresenta i colori usando 6 cifre in base 16 (0-9, A-F), divise in tre coppie per Rosso, Verde e Blu.
+STRUTTURA: #RRGGBB(Es. #e74c3c = rosso vivace).
+
+<!-- Colori RGB -->
+Il formato RGB utilizza tre valori numerici da 0 a 255 per specificare l'intensità di rosso, verde e blu.
+color: rgb(255, 0, 0);    /* Rosso */
+color: rgb(0, 255, 0);    /* Verde */
+color: rgb(0, 0, 255);    /* Blu */
+color: rgb(128, 128, 128); /* Grigio */
+
+Aggiungendo un quarto valore (alpha) da 0 a 1, si controlla l'opacità.
+background: rgba(255, 0, 0, 0.5); /* Rosso semitrasparente */
+
+<!-- Colori HSL -->
+Hue = Tonalità, Angolo sulla ruota dei colori da 0° a 360°. 0°/360° = rosso, 120° = verde, 240° = blu.
+Saturation = Saturazione, Intensità del colore da 0% (grigio) a 100% (colore puro e vivido).
+Lightness = Luminosità, Chiarezza del colore da 0% (nero) a 100% (bianco), 50% = colore pieno.
+HSL è particolarmente utile per creare variazioni di uno stesso colore: mantenendo la tonalità costante e modificando saturazione e luminosità, si generano facilmente palette armoniche.
+
+<!-- MARGIN -->
+Il margin crea spazio esterno all'elemento, separandolo dagli elementi circostanti.
+/* Tutte le direzioni */
+margin: 20px;
+
+/* Verticale | Orizzontale */
+margin: 10px 20px;
+
+/* Top | Orizzontale | Bottom */
+margin: 10px 20px 30px;
+
+/* Top | Right | Bottom | Left */
+margin: 10px 20px 30px 40px;
+
+margin: 0 auto; = Centra orizzontalmente un elemento con larghezza definita.
+
+<!-- PADDING -->
+Il padding crea spazio interno tra il contenuto dell'elemento e il suo bordo. Aumenta l'area dell'elemento senza spostarlo.
+padding: 20px;
+padding: 10px 20px;
+padding-top: 15px;
+padding-right: 20px;
+padding-bottom: 15px;
+padding-left: 20px;
+Mentre il margin separa elementi tra loro, il padding dà "respiro" al contenuto interno, rendendo cliccabili aree più ampie e migliorando leggibilità.
+
+<!-- ESEMPIO -->
+.card {
+  width: 300px;
+  padding: 20px;
+  margin: 30px auto;
+  background: #f0f0f0;
+  border: 2px solid #333;
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.card p {
+  margin: 0;
+}
+
+<!-- Box Model CSS -->
+Il box model è il concetto fondamentale che governa il layout in CSS.
+Ogni elemento HTML è concettualmente una scatola rettangolare composta da quattro layer distinti: content, padding, border e margin.
+Comprendere questo modello è essenziale per controllare con precisione dimensioni, spaziature e posizionamento degli elementi.
