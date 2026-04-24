@@ -106,3 +106,85 @@ Mentre il margin separa elementi tra loro, il padding dà "respiro" al contenuto
 Il box model è il concetto fondamentale che governa il layout in CSS.
 Ogni elemento HTML è concettualmente una scatola rettangolare composta da quattro layer distinti: content, padding, border e margin.
 Comprendere questo modello è essenziale per controllare con precisione dimensioni, spaziature e posizionamento degli elementi.
+
+<!-- CONTENT -->
+Il content è il cuore del box: l'area dove risiedono testo, immagini, video o altri elementi HTML innestati.
+width = Larghezza dell'area contenuto
+height = Altezza dell'area contenuto
+
+<!-- BORDER -->
+Il border è una linea decorativa che circonda l'area di padding + content.
+border: 2px solid #333;
+
+/* O specificando ogni proprietà */
+border-width: 2px;
+border-style: solid;
+border-color: #333333;
+
+Stili disponibili:
+solid = Linea continua
+dashed = Linea tratteggiata
+dotted = Puntini
+double = Linea doppia
+groove, ridge, inset, outset = Effetti 3D
+none = Nessun bordo
+
+<!-- BOX SIZING -->
+CONTENT-BOX(DEFAULT)
+.box {
+  box-sizing: content-box;
+  width: 200px;
+  padding: 20px;
+  border: 5px solid black;
+}
+/* Larghezza totale: 250px
+   (200 + 20×2 + 5×2) */
+Le proprietà width e height si applicano SOLO al content. Padding e border si aggiungono alle dimensioni.
+
+BORDER-BOX(CONSIGLIATO)
+.box {
+  box-sizing: border-box;
+  width: 200px;
+  padding: 20px;
+  border: 5px solid black;
+}
+/* Larghezza totale: 200px
+   (come specificato) */
+Width e height includono content, padding E border. Più intuitivo e prevedibile.
+
+<!-- ESEMPIO PRATICO -->
+HTML
+<div class="info-card">
+  <h2>CSS Box Model</h2>
+  <p>
+    Il box model è il fondamento
+    del layout CSS. Ogni elemento
+    è una scatola con content,
+    padding, border e margin.
+  </p>
+</div>
+
+CSS
+.info-card {
+  /* Font e colori dal passo 2 */
+  font-family: "Arial", sans-serif;
+  background-color: #F7F5FF;
+  color: #333333;
+  
+  /* Box model */
+  width: 400px;
+  padding: 30px;
+  border: 3px solid #403ccfff;
+  border-radius: 8px;
+  margin: 40px auto;
+  box-sizing: border-box;
+}
+
+.info-card h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.info-card p {
+  margin-bottom: 0;
+}
