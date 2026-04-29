@@ -1,11 +1,13 @@
 /* RESET BASE */
 body {
     margin: 0;
+    font-family: 'Titillium Web';
+    font-weight: 700;
 }
 
 /* HEADER */
 .header {
-    background-color: blue;
+    background-color: hsl(240, 36%, 51%);
     color: white;
     text-align: center;
     padding: 60px 20px;
@@ -21,7 +23,7 @@ body {
 
 /* BOTTONE */
 .btn {
-    background-color: orangered;
+    background-color: rgb(196, 77, 34);
     color: white;
     padding: 10px 20px;
 }
@@ -64,7 +66,7 @@ input, textarea {
 }
 
 button {
-    background-color: red;
+    background-color: rgb(196, 77, 34);
     color: white;
     padding: 10px;
 }
