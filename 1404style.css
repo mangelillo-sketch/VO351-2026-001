@@ -1,0 +1,44 @@
+.card{
+    background-color: rgb(7, 73, 51);
+    margin: 10px;
+    border: 2px solid #ffffff;
+    width: 500px;
+    aspect-ratio: 16/9;
+    border-radius: 30px 10px;
+
+    /*
+    -webkit-border-radius: 30px 10px; per il web che non sono ancora standerdizzate
+    -moz-border-radius: 30px 10px; per mozilla
+    -o-border-radius: 30px 10px; per opera
+    */
+    box-shadow: 0px 6px 30px 5px rgb(0, 0, 0);
+    /* primo px a destra, secondo px su asse y, terzo per la sfumatura, quartoo per la diffusione*/
+    /* anche per box shadow c'è -webkit-, -moz-, -o- */
+
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#cb60b3+0,c146a1+33,c146a1+33,a80077+69,db36a4+100 */
+    background: linear-gradient(135deg,  #cb60b3 0%,#c146a1 33%,#c146a1 33%,#a80077 69%,#db36a4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#cb60b3+0,c146a1+33,c146a1+33,a80077+69,db36a4+100 */
+    background: radial-gradient(ellipse at center,  #cb60b3 0%,#c146a1 33%,#c146a1 33%,#a80077 69%,#db36a4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+
+}
+
+.card p{ /* selettore di discendete*/
+    /* .card>p selettore di figli*/
+    padding: 20px;
+    color: #ffffff;
+}
+
+.card h2{
+	padding: 20px;
+	padding-left: 140px;
+	font-weight: bolder;
+	color: white;
+	font-size: 40px;
+	
+	
+}
+/* * (asterisco) questo seleziona tutti */ 
+/* :root <- pseudo classe seleione l'elemento radice (html) da mettere inserire standard come il font*/
+body{
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";

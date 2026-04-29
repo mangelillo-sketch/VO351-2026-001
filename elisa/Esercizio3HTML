@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Il Mio Profilo - Web Designer</title>
+</head>
+<body>
+ <header> 
+    <img src="io.png"
+          alt="Elisa Contò, Web Designer"/>
+     <h1>Elisa Contò</h1>
+     <h2>Web Designer & Developer</h2>
+      <p>Da 1 anno esperta nella realizzazione di siti web e con una solida formalizanione nella grafica.</p>
+       <nav>
+        <a href=https://www.linkedin.com/in/elisa-cont%C3%B3-1ab21a216/
+            target="_blank"
+            rel="noopener"
+            title="Profilo LinkedIn">LinkedIn</a>
+        <a href=https://github.com/elisacnt
+            target="_blank"
+            rel="noopener"
+            title="Repository GitHub">GitHub</a> 
+       </nav>
+ </header>
+  <main>
+    <section id="portfolio">
+     <h2>I Miei Progetti</h2>
+  <article>
+ <h3>Mascotte Asolo Rugby</h3>
+ <img src="picchio 2.jpg"  alt="Picchio mascotto della asolo rugby"  width="400"  height="300">
+  <p>Ho realizzzato per la società di Asolo Rugby una mascotte di un un picchio che definisse il loro logo</p>
+</article>
+  <article>
+ <h3>Sito web aziendale</h3>
+ <img src="Screenshot.png"  alt="Screenshot della home del sito web aziendale"  width="400"  height="300">
+  <p>Sito web aziendale per un azienda che lavora nel mondo di Meta.</p>
+  <p><a href="https://slbranding.it/"  target="_blank"  rel="noopener">Esplora il progetto</a></p>
+ </article>
+    </section>
+    <section id="contatti"> 
+         <h2>Contattami</h2>
+        <div>
+        <h3>Informazioni</h3>
+        <p>Email:
+            <a href="mailto:elisaconto@icloud.com?subject=Richiesta%20collaborazione&body=Ciao%20Mario,%20ti%20scrivo%20per...">
+               elisaconto@icloud.com
+           </a>
+        </p>
+        <p>Telefono:
+            <a href=tel:+393471036479
+               title="Chiamami direttamente"> 
+              +39 334 123 4567
+           </a>
+        </p>
+        <p>SMS:
+            <a href="sms:+393471036479" 
+              title="Invia un messaggio">
+               Invia messaggio
+           </a>
+        </p>
+    </div>
+    </section>
+ </main>
+</body>
+</html>

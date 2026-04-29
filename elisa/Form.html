@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contattami</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h2>Contattami</h2>
+  <form action="/submit" method="POST">
+   <div>
+    <label for="name">Nome</label><br>
+    <input type="text" id="name" name="name" placeholder="Nome" required>
+  </div>
+
+  <div>
+    <label for="lastname">Cognome</label><br>
+    <input type="text" id="lastname" name="lastname" placeholder="Cognome" required>
+  </div>
+
+  <div>
+    <label for="Email">Email</label><br>
+    <input type="email" id="Email" name="Email" placeholder="email@esempio.it" required>
+</div>
+
+<div>
+    <label for="subject">Oggetto</label><br>
+    <textarea id="subject" name="subject" placeholder="Scrivi.." style="height:200px" required></textarea>
+</div>
+
+    <button type="submit" class="green-outline-button">Invia</button>
+  </form>
+</body>
+</html>
