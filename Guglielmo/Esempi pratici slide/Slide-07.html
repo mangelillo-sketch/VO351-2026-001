@@ -1,0 +1,47 @@
+HTML e CSS: Due mondi distinti.
+HTML = Struttura
+CSS = Stile
+Separazione Intelligente -> Migliora manutenzione, riuso del codice e chiarezza. Permette modifiche rapide senza toccare il contenuto.
+
+Regola CSS = Selettore + Dichiarazioni
+Il selettore indica a quali elementi HTML applicare lo stile.
+La dichiarazione comprende la coppia proprietà e valore.
+<!-- ESEMPIO -->
+h1 {
+  color: red;
+  font-size: 32px;
+}
+Selettore -> Proprietà -> Valore.
+
+<!-- Proprietà CSS comuni -->
+color -> colore del testo
+background-color -> colore di sfondo
+font-family -> tipo di carattere
+font-size -> dimensione del testo
+margin -> spazio esterno
+padding -> spazio interno
+border -> bordo dell'elemento
+display -> tipo di visualizzazione
+position -> posizionamento
+float -> allineamneto flottante
+
+<!-- CSS INLINE -->
+<p style="color:blue;">Testo blu</p>
+Rapido per modifiche specifiche e puntuali su singoli elementi.
+Poco manutenibile, impossibile da riutilizzare, mescola struttura e stile.
+
+<!-- CSS INTERNO(Embedded) -->
+<style>
+  p { 
+    color: red; 
+    font-size: 16px;
+  }
+</style>
+Ideale per pagine singole, prototipi veloci o quando si vuole testare rapidamente uno stile.
+
+<!-- CSS ESTERNO -->
+Crea un .ccs file separato, lo colleghi con link nella sezione head dell'HTML.
+<link rel="stylesheet" href="#.css">
+Riuso su più pagine, organizzazione migliore, caching del browser per performance ottimali
+
+Con F12 si apre l'inspector che permette di ispezionare, modificare e debuggare HTML e CSS in tempo reale.
