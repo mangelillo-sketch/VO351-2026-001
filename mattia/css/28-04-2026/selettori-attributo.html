@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Page Title</title>
+    <style type="text/css">
+        [title]{
+            font-size: 1.5em;
+            color: red;
+        }
+        a[title]{
+            text-decoration: line-through;
+        }
+        a[title="Lorem"]{
+            color: blue;
+        }
+        a[title~="ipsum"]{
+            background-color: yellow;
+        }
+        a[title|="ipsum"]{
+            background-color: green;
+        }
+        a[title^="Lorem"]{
+            background-color: blue;
+        }
+        a[title$="amet"]{
+            text-transform: uppercase;
+        }
+        a[title*="Lorem"]{
+            text-decoration: dotted;
+        }
+    </style>
+</head>
+<body>
+        <a>Link</a> <br />
+        <a title="Lorem">Link</a> <br />
+        <a title="Lorem ipsum dolor sit amet">Link</a> <br />
+        <a title="Loremipsum dolor">Link</a> <br />
+        <a title="Lorem ipsum dolor si">Link</a> <br />
+        <a title="ipsum-dolor-sit-amet">Link</a> <br />
+        <a title="Lorem ipsum Lorem dolor sit">Link</a> <br />
+        <a title="Loremipsum dolor sitamet">Link</a> <br />
+        <a title="ipsum dolor sit">Link</a> <br />
+
+        <div title>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ea ex amet vel? Odit delectus pariatur quaerat autem? Ut totam provident inventore necessitatibus quod repudiandae. Molestias vero possimus enim nisi.</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Page Title</title>
+    <style type="text/css">
+        :enabled{color: green;}
+        :disabled{color: red;}
+        :checked{margin-left: 100px;}
+        label{
+            border: 1px solid;
+            aspect-ratio: 1/1;
+            width: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body> 
+    <form>
+        <input type="text" value="TEXT" /> <br />
+        <input type="text" value="TEXT" disabled /> <br />
+        <input type="checkbox" /> Accetto<br />
+        <input type="checkbox" /> Non Accetto<br />
+
+        <div>
+            <label for="check"></label>
+            <input id="check" type="checkbox" style="display: none;" /> 
+        </div>
+    </form>
+</body>
+</html>
