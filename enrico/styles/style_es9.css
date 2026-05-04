@@ -2,7 +2,7 @@ body {
   margin: 0;
 }
 .content {
-  max-width: 600px;
+  /* max-width: 600px; */
   margin: 0 auto;
 }
 
@@ -16,7 +16,8 @@ article {
   border: 1px solid #a0a0a0;
   box-shadow: 1px 1px 1px #5f5f5f;
   padding: 1.25rem;
-  max-width: 100rem;
+  /* max-width: 100rem; */
+  max-width: 300px;
 }
 
 .title-mono {
@@ -41,4 +42,18 @@ article {
 .colored {
   background-color: green;
   color: white;
+}
+
+
+.flex, .flex-center {
+  background-color: #f6c9052c;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* align-items: flex-start; */
 }
