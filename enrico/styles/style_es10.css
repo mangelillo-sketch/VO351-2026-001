@@ -1,1 +1,112 @@
 @import url("/styles/style_es-base.css");
+
+article {
+  padding: 1.25rem;
+}
+
+tr{
+   background-color: lightgray;
+}
+
+/* esercizio1A */
+#esercizio1A{
+   margin: auto;
+   width: 400px;
+   height: 200px;
+   background-color: #09ff00;
+}
+
+
+/* esercizio2B */
+#esercizio2A p:first-child{
+   font-family: "Arial", sans-serif;
+   font-weight: bold;
+}
+#esercizio2A p:last-child{
+   font-family: "Arial", sans-serif;
+   font-weight: bold;
+}
+
+/* esercizio 1B */
+#esercizio1B p:first-child,#esercizio1B p:not(:first-child):not(:last-child) {
+   font-family: "Arial", sans-serif;
+}
+
+/* esercizio 2B */
+
+#esercizio2B tr:nth-child(even){
+   background-color: yellow;  
+}  
+#esercizio2B tr:nth-child(odd){
+   background-color: green;  
+}
+#esercizio2B tr:nth-child(3){
+   background-color: red;  
+}
+
+/* esercizio 3B */
+#esercizio3B tr:nth-child(4n+2){
+   background-color: blue;
+}
+
+/* esercizio 4B */
+#esercizio4B tr:nth-child(3) td:nth-child(2){
+   background-color: red;
+   color: white;
+   font-weight: bold;
+}
+/* esercizio 5B */
+#esercizio5B > * {
+   color: green;
+}
+
+/* esercizio 6B */
+#esercizio6B input:focus {
+   background-color: yellow;
+}
+#esercizio6B input:disabled {
+   background-color: darkblue;
+}
+#esercizio6B input[type="password"]:enabled {
+   background-color: green;
+}
+#esercizio6B input:hover {
+   background-color: lightgreen;
+}
+#esercizio6B input[type="checkbox"]:checked {
+   background-color: lightcoral;
+}
+
+/* esercizio 7B */
+#esercizio7B div:not(.red) {
+   background-color: red;
+}
+/* esercizio 8B */
+#esercizio8B div:not(.red):nth-child(even) {
+   background-color: lightblue;
+}
+/* esercizio1C */
+#esercizio1C ul{
+   list-style: none;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+#esercizio1C li{
+   border-bottom: 3px solid chocolate;
+   background-color: cornflowerblue;
+   padding: 1rem;
+}
+
+#esercizio1C li a, #esercizio1C li a:hover, #esercizio1C li a:visited{
+   font-style: normal;
+   color:aliceblue;
+   font-size: medium;
+   font-weight: bold;
+   text-decoration: none;
+}
+
+#esercizio1C li:hover{
+   border-bottom:  3px solid cornflowerblue;
+   background-color:  chocolate;
+}
