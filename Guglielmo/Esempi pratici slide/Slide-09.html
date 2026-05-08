@@ -1,0 +1,140 @@
+<!-- Selettore universale -->
+Il selettore universale serve a selezionare tutti gli elementi di un documento. Si esprime con il carattere * (asterisco).
+
+<!-- Selettore di tipo -->
+I selettori di tipo sono rappresentati dal nome di uno specifico elemento HTML. 
+Servono a selezionare tutti gli elementi di quel tipo specifico presenti in un documento.
+h1 {color: red}
+p {color: green}
+li {color: blue}
+
+<!-- Selettori di classe -->
+Ad ogni elemento HTML può essere assegnata una classe usando l'attributo class e assegnando ad esso un valore a nostra scelta:
+<h1 class="titolo">Testo</h1>
+È anche possibile assegnare ad un elemento più classi. È sufficiente definirle nel codice separandole con uno spazio:
+<h1 class="titolo testata rosso">Testo</h1>
+Una singola classe può essere assegnata a più di un elemento:
+<h1 class="titolo">Testo</h1>
+<h2 class="titolo">Testo</h2>
+Nei CSS, per selezionare gli elementi a cui sia stata assegnata una classe, si utilizza questa sintassi:
+.titolo {color: red}
+
+<!-- Selettori di ID -->
+Anche id è un attributo universale in HTML. Significa che tutti gli elementi presenti nel documento possono avere un loro id. A differenza delle classi, però, uno specifico id può essere assegnato solo ad un elemento. Non possiamo quindi avere in un documento HTML una situazione del genere:
+<h1 id="titolo"></h1>
+<p id="titolo"></p>
+Nei CSS, per selezionare un elemento cui sia stato assegnato un certo id, si usa questa sintassi, facendo precedere il valore dell'id dal simbolo del cancelletto (#):
+#titolo
+
+<!-- Selettori di relazione -->
+Una categoria fondamentale di selettori CSS è rappresentata dai cosiddetti combinatori (detti anche selettori di relazione). Hanno la funzione di mettere in relazione elementi presenti all'interno dell'albero del documento.
+Sono quattro:
+<!-- Selettore di discendenti -->
+Il selettore di discendenti è sicuramente quello più utilizzato dei quattro. 
+È  utilissimo per evitare l'abuso delle classi per assegnare stili agli elementi.
+Il combinatore seleziona un elemento che è discendente di un altro elemento. Vediamo un brevissimo esempio per capirne il funzionamento:
+div#container p {color: green}
+Il codice appena visto serve ad assegnare lo stile solo ai paragrafi contenuti nel div#container, ovvero ai paragrafi discendenti del div con id container.
+Per impostare la relazione di discendenza, è sufficiente separare l'elemento antenato dal discendente con uno spazio.
+<!-- Selettore di figli (>) -->
+Il selettore di figli (>) consente di selezionare un elemento che è figlio diretto dell'elemento padre. Questo selettore è solo in apparenza simile al selettore di discendenti. 
+La differenza sta nella relazione di discendenza tra gli elementi, che in questo caso deve essere di primo livello. Chiariamo con un esempio:
+<body> 
+<p>Primo paragrafo</p> 
+<div> 
+<p>Secondo paragrafo</p> 
+</div> 
+<p>Terzo paragrafo</p> 
+</body>
+Dei tre paragrafi solo il primo e il terzo sono figli diretti di body. Il secondo è invece figlio diretto di un elemento div. Tutti e tre, però, sono discendenti di body.
+<!-- Selettore di fratelli adiacenti (+) -->
+Il selettore di fratelli adiacenti serve a scorrere in orizzontale l'albero del DOM assegnando le regole CSS agli elementi che si trovano allo stesso livello di un altro elemento. La relazione si definisce collegando i due elementi con il segno +.
+In pratica, questo tipo di selettore consente di assegnare uno stile all'elemento fratello immediatamente adiacente. Dato un codice HTML come il seguente:
+<div>
+  <h1>1. Questo è il titolo principale.</h1>
+  <h2>1.1 Questo è il primo sottotitolo.</h2>
+  <p>...</p>
+  <h2>1.2 Questo è il secondo sottotitolo.</h2>
+  <p>...</p>
+</div>
+Applicando la seguente regola
+h1 + h2 {color: red; text-decoration: underline}
+verrà selezionato solo il primo <h2> dato che è immediatamente adiacente al tag <h1>
+Consideriamo, invece, il seguente codice HTML
+<ul>
+  <li>List Item 1</li>
+  <li>List Item 2</li>
+  <li>List Item 3</li>
+  <li>List Item 4</li>
+  <li>List Item 5</li>
+</ul>
+e la seguente regola CSS:
+li + li {margin-left: 10px; color: red}
+Il combinatore andrà a selezionare tutti quegli elementi che sono diretti fratelli del tag li e, scorrendo in orizzontale l'albero del DOM, solo il primo <li> non coinciderà con la proprietà.
+<!-- Selettore generale di fratelli (~) -->
+L'ultimo combinatore (~) è una generalizzazione di quello visto in precedenza. Esso assegna uno stile a tutti gli elementi che sono fratelli. Dato il codice HTML visto in precedenza
+<div>
+  <h1>1. Questo è il titolo principale.</h1>
+  <h2>1.1 Questo è il primo sottotitolo.</h2>
+  <p>...</p>
+  <h2>1.2 Questo è il secondo sottotitolo.</h2>
+  <p>...</p>
+</div>
+e applicando il codice CSS seguente
+h1 ~ h2 {color: red; text-decoration: underline}
+andremo a selezionare tutti gli elementi <h2> dello stesso livello di <h1> indipendentemente dalla posizione che occupano
+Analizziamo invece il seguente caso. Dato questo codice:
+<div>
+  ...
+  <h2>Questo e' un sottotitolo h2</h2>
+  <h3>Questo e' un sottotitolo h3</h3>
+  ...
+  <h2>Questo e' un sottotitolo h2</h2>
+  <h3>Questo e' un sottotitolo h3</h3>
+  ...
+  <h2>Questo e' un sottotitolo h2</h2>
+  <h3>Questo e' un sottotitolo h3</h3>
+</div>
+e la seguente regola
+h3 ~ h2 {color: red; text-decoration: underline}
+
+Notiamo che al primo h2 presente nel codice non viene applicato alcuno stile, mentre a tutti gli altri sì.
+Questo succede perché la regola viene assegnata solo agli elementi che sono fratelli e successori dell'elemento h3.
+
+<!-- Selettori di attributo -->
+I selettori di attributo consentono di selezionare gli elementi all'interno di una pagina in base ai loro attributi e assegnare così lo stile desiderato.
+È possibile quindi identificare gli elementi di una pagina senza essere costretti ad assegnare loro una classe o un id.
+Innanzitutto vediamo nel dettaglio quali sono i selettori di attributo che analizzeremo in questa lezione. La lista è la seguente:
+<!-- E[attribute] -->
+Questo selettore individua tutti gli elementi E che possiedono l'attributo attribute, indipendentemente dal contenuto dell'attributo.
+Partiamo dal seguente codice CSS:
+a[title] {color: blue; text-decoration: underline}
+E vediamo alcuni esempi per verificare il funzionamento del selettore e analizzare alcuni casi particolari.
+<a title="Lorem Ipsum" href="#">Lorem Ipsum</a>
+All'elemento a presente nello snippet di codice precedente verrà sicuramente applicata la regola (testo blue e sottolineatura) dato che l'elemento a presenta un attributo title.
+<a title="" href="#">Lorem Ipsum</a>
+<a title href="#">Lorem Ipsum</a>
+<a TITLE="Lorem Ipsum" href="#">Lorem Ipsum</a>
+Anche in tutti questi casi verrà applicata la regola. Nel primo e nel secondo caso, anche se l'attributo title è vuoto, è comunque definito e quindi viene trovato dal parser.
+Nel terzo caso invece la proprietà viene applicata perché gli attributi non sono case sensitive.
+<a titles href="#">Lorem Ipsum</a>
+<a titles="Lorem Ipsum" href="#">Lorem Ipsum</a>
+I due esempi precedenti, invece, non verranno presi in considerazione dato che l'attributo title contiene degli errori di scrittura (nel codice è titles).
+<!-- E[attribute=value] -->
+Questo selettore individua tutti gli elementi E che possiedono l'attributo attribute che al proprio interno contiene il valore value.
+Partiamo da uno snippet di codice come il seguente:
+a[title="Lorem"] {color: blue; text-decoration: underline}
+E analizziamo il funzionamento.
+<a title="Lorem" href="#">Lorem Ipsum</a>
+<a TITLE="Lorem" href="#">Lorem Ipsum</a>
+In entrambi  i casi verrà applicata la regola (testo blue e sottolineato) perché entrambi gli elementi a presentano un attributo title che presenta come valore lorem e avendo spiegato che l'attributo è case insensitive.
+Vediamo ora alcuni esempi in cui non verrà applicata la proprietà.
+<a title="Lorem " href="#">Lorem Ipsum</a>
+Il codice non produce effetti dato che contiene uno spazio che non è stato dichiarato nella regola CSS.
+<a title="LOREM " href="#">Lorem Ipsum</a>
+Anche questo codice non produrrà effetti dato che il valore dell'attributo, a differenza dell'attributo stesso, è case sensitive e il titolo è stato inserito tutto in maiuscolo.
+<!-- E[attribute~=value] -->
+<!-- E[attribute|=value] -->
+<!-- E[attribute^=value] -->
+<!-- E[attribute$=value] -->
+<!-- E[attribute*=value] -->
