@@ -134,7 +134,72 @@ Il codice non produce effetti dato che contiene uno spazio che non è stato dich
 <a title="LOREM " href="#">Lorem Ipsum</a>
 Anche questo codice non produrrà effetti dato che il valore dell'attributo, a differenza dell'attributo stesso, è case sensitive e il titolo è stato inserito tutto in maiuscolo.
 <!-- E[attribute~=value] -->
+Questo selettore individua tutti gli elementi E il cui l'attributo attribute contiene una lista di parole separate da spazi, una delle quali è esattamente value.
+A primo impatto non è molto intuitiva come proprietà ma cerchiamo di renderla comprensibile con un esempio.
+Partendo da un codice CSS come il seguente:
+a[title~="dolor"] {color: blue; text-decoration: underline}
+Per assegnare la proprietà ad un elemento a è necessario che l'attributo title contenga una lista di parole separate da spazi e che nella lista sia presente la stringa dolor.
+Quindi, un codice come il seguente farà sicuramente matching con la regola CSS:
+<a title="Lorem ipsum dolor sit amet" href="#">Lorem Ipsum</a>
+Come per il selettore precedente, anche in questo caso l'attributo sarà case insensitive ma il valore farà distinzione tra caratteri maiuscoli e minuscoli.
 <!-- E[attribute|=value] -->
+Selettore del tutto simile al precedente, con una semplice differenza nella definizione del valore.
+Mentre per l'esempio precedente il valore doveva essere separato da spazi, in questo selettore il valore deve essere separato da trattini (-).
+Quindi, volendo dare una definizione precisa diremo che il selettore individua tutti gli elementi E il cui un attributo attribute contiene una lista di parole separate da trattini, una delle quali è esattamente value.
+Vediamo un semplicissimo esempio:
+a[title|="Lorem"] {color: blue; text-decoration: underline}
+<a title="Lorem-ipsum-dolor-sit-amet" href="#">Lorem Ipsum</a>
+Le proprietà descritte per i selettori precedenti sono ovviamente valide anche per il selettore corrente.
 <!-- E[attribute^=value] -->
+Il selettore di cui ci occupiamo assegna la regola CSS a tutti gli elementi E in cui l'attributo attribute inizia con il valore value.
+L'attributo deve iniziare esattamente con il valore value per trovare corrispondenza con la proprietà.
+Vediamo alcuni esempi, partendo dal codice seguente:
+a[title^="Lorem"] {color: blue; text-decoration: underline}
+E' sufficiente che l'attributo inizi o sia esattamente uguale a “Lorem”. Vediamo alcuni esempi a cui verrà sicuramente assegnata la proprietà:
+<a title="Lorem" href="#">Lorem Ipsum</a>
+<a title="Lorem ipsum dolor sit amet" href="#">Lorem Ipsum</a>
+<a title="Lorem-ipsum-dolor-sit-amet" href="#">Lorem Ipsum</a>
+<a title="Loremipsum dolor sit amet" href="#">Lorem Ipsum</a>
+Nella prima riga il title corrisponde esattamente con il valore di value e quindi è la situazione base.
+Nel secondo esempio abbiamo una frase la cui prima parola corrisponde con “Lorem” e anche in questo caso la proprietà verrà applicata.
+Nel terzo e nel quarto caso invece possiamo notare che, anche se non ci sono spazi che separano la stringa, verrà comunque applicata la regola CSS.
+Vediamo invece quali saranno i casi in cui non ci sarà corrispondenza con la proprietà CSS spiegandone i motivi.
+<a title="Lor em" href="#">Lorem Ipsum</a>
+<a title="LOrem" href="#">Lorem Ipsum</a>
+<a title="Ipsum Lorem" href="#">Lorem Ipsum</a>
+In tutti e tre gli esempi precedenti, invece, non verrà applicata la regola perché non c'è in nessun modo una corrispondenza.
+Nel primo caso abbiamo uno spazio che spezza la stringa “Lorem”; nel secondo caso abbiamo la lettera O maiuscola e, avendo spiegato in precedenza che il valore non è case sensitive, non farà match con la proprietà.
+L'ultimo caso è banale, il title non inizia con “Lorem” e quindi non c'è corrispondenza.
 <!-- E[attribute$=value] -->
+Il selettore è del tutto identico a quello precedente con un'unica differenza fondamentale. Il valore value deve trovarsi al termine dell'attributo attribute.
+La seguente regola:
+a[title$="amet"] {color: blue; text-decoration: underline}
+verrà sicuramente assegnata nei seguenti casi:
+<a title="amet" href="#">Lorem Ipsum</a>
+<a title="Lorem ipsum dolor sit amet" href="#">Lorem Ipsum</a>
+<a title="Lorem-ipsum-dolor-sit-amet" href="#">Lorem Ipsum</a>
+<a title="Lorem ipsum dolor sitamet" href="#">Lorem Ipsum</a>
+Le motivazioni sono del tutto identiche all'esempio precedente. Esempi in cui, invece, non ci sarà corrispondenza sono i seguenti:
+<a title="am et" href="#">Lorem Ipsum</a>
+<a title="Lorem ipsum dolor sit ameT" href="#">Lorem Ipsum</a>
+<a title="Lorem amet ipsum" href="#">Lorem Ipsum</a>
+Anche in questi esempi non c'è molto da spiegare.
+Nel primo caso la stringa non corrisponde con “amet”; nella seconda riga termina con una T maiuscola non definita e, nell'ultimo esempio, la stringa non termina con la proprietà value definita.
 <!-- E[attribute*=value] -->
+L'ultimo selettore è sicuramente il più semplice e, probabilmente, il più interessante. È del tutto identico ai due precedenti con la sola differenza che il valore value deve trovarsi nell'attributo attribute, indipendentemente dalla posizione che occupa.
+Data la seguente regola
+a[title*="dolor"] {color: blue; text-decoration: underline}
+tutti i seguenti esempi faranno matching con essa:
+<a title="dolor" href="#">Lorem Ipsum</a>
+<a title="Lorem ipsum dolor" href="#">Lorem Ipsum</a>
+<a title="Lorem ipsum dolor sit amet" href="#">Lorem Ipsum</a>
+<a title="Lorem-ipsum-dolor-sit-amet" href="#">Lorem Ipsum</a>
+<a title="Lorem ipsum dolorsit amet" href="#">Lorem Ipsum</a>
+La prima riga, anche in questo caso, è il caso base e quindi corrisponde.
+Nella seconda riga la stringa si trova alla fine mentre, negli altri esempi, si trova nel mezzo del valore di title ma in tutti i casi corrisponderà alla regola definita.
+Gli unici casi in cui la proprietà non verrà assegnata saranno quando essa non è presente oppure c'è qualche differenza case sensitive come nei seguenti esempi:
+<a title="do lor" href="#">Lorem Ipsum</a>
+<a title="doLor" href="#">Lorem Ipsum</a>
+<a title="Lorem ipsum sit amet" href="#">Lorem Ipsum</a>
+<a title="Lorem ipsum DOLOR sit amet" href="#">Lorem Ipsum</a>
+
