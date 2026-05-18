@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+</head>
+    <style>
+        input:focus{
+            background-color: yellow;
+        }
+
+        input:disabled{
+            background-color: gray;
+        }
+
+        input:enabled{
+            border: 2px solid green;
+        }
+
+        input:hover{
+            background-color: lightblue;
+        }
+
+        input:checked{
+             width: 20px;
+            height: 20px;
+        }
+    </style>
+    <body>
+        <form>
+            <input type="text">
+            <input type="text">
+            <input type="text" disabled>
+            <input type="text">
+            <input type="text" disabled>
+
+            <input type="radio" name="scelta">
+            <input type="radio" name="scelta">
+
+            <input type="checkbox">
+        </form> 
+    </body>
+ </html>
