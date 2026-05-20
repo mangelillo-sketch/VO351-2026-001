@@ -1,0 +1,65 @@
+<!-- ARRAY -->
+Sono collezioni ordinate di dati.
+const carrello = ["Pane", "Latte", "Caffè"];
+Un array JS può contenere stringhe, numeri, oggetti e altri array contemporaneamente (anche se è sconsigliato per performance).
+const mix = [42, "Ciao", { id: 1 }, [10, 20]]; 
+// Valido, ma attenzione alla coerenza dei dati!
+<!-- ANATOMIA -->
+Indici (partono da 0) e Valori.
+Proprietà .length: dinamica e automatica.
+const colori = ["Rosso", "Verde", "Blu"];
+console.log(colori.length); // 3
+console.log(colori[0]);      // "Rosso"
+<!-- ACCESSO E MODIFICA -->
+Bracket notation: array[0].
+Sovrascrittura: array[1] = 'Nuovo Valore'.
+Attenzione: Accedere a un indice inesistente restituisce undefined.
+const auto = ["Fiat", "Ford"];
+auto[1] = "Tesla"; // Cambia Ford in Tesla
+auto[5] = "Audi";  // Crea "buchi" (empty items) nell'array
+<!-- INSERIMENTO/RIMOZIONE -->
+push() / pop(): Aggiungi/Rimuovi alla fine (O(1)).
+unshift() / shift(): Aggiungi/Rimuovi all'inizio (O(n) - più lento).
+let coda = ["Anna", "Luca"];
+coda.push("Marco");    // ["Anna", "Luca", "Marco"]
+let primo = coda.shift(); // "Anna", coda è ["Luca", "Marco"]
+<!-- RICERCA -->
+indexOf() e lastIndexOf().
+includes(): Ritorna un booleano (molto leggibile).
+const frutti = ["Mela", "Pera", "Mela"];
+console.log(frutti.indexOf("Mela"));    // 0
+console.log(frutti.includes("Arancia")); // false
+<!-- SPLICE/SLICE -->
+slice(start, end): Estrae una porzione (non modifica l'originale).
+splice(index, count, items): Il "coltellino svizzero" per aggiungere o rimuovere elementi ovunque (modifica l'originale).
+const numeri = [1, 2, 3, 4, 5];
+const parte = numeri.slice(1, 3); // [2, 3] (originale intatto)
+numeri.splice(2, 1, 99);          // Rimuove 3 e inserisce 99
+<!-- RIFERIMENTO VS VALORE -->
+Concetto Critico: Gli array sono oggetti. Copiare un array con = copia solo il riferimento in memoria.
+Esempio di errore comune: Modificare b che cambia anche a.
+const a = [1, 2];
+const b = a; 
+b.push(3); 
+console.log(a); // [1, 2, 3] -> Entrambi puntano allo stesso oggetto!
+<!-- SPREAD OPERATOR -->
+Copiare array in modo sicuro (Shallow copy): const copia = [...originale].
+Unire array: const unito = [...a, ...b]
+const originale = [1, 2];
+const copiaSicura = [...originale];
+const unito = [...originale, 3, 4]; // [1, 2, 3, 4]
+<!-- DESTRUTTURAZIONE DEGLI ARRAY -->
+Estrarre valori velocemente: const [primo, secondo] = array;.
+Uso del parametro rest: const [capo, ...sottoposti] = team;.
+const coordinate = [10, 20, 30];
+const [x, y] = coordinate; // x=10, y=20
+const [primo, ...resto] = [1, 2, 3, 4]; // resto=[2, 3, 4]
+<!-- ARRAY MULTIDIMENSIONALI -->
+Array dentro array (matrici).
+Accesso: matrice[riga][colonna].
+const battagliaNavale = [
+  [0, 1, 0],
+  [1, 0, 0],
+  [0, 0, 1]
+];
+console.log(battagliaNavale[1][0]); // 1
