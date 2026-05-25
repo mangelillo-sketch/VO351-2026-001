@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Esercizio 17</title>
+    <link rel="stylesheet" href="styles/style_es10.css" />
+    <style>
+      .browser-console {
+        display: none;
+        margin-top: 1rem;
+        padding: 1rem;
+        min-height: 180px;
+        max-height: 320px;
+        overflow: auto;
+        color: #e8f0f2;
+        background-color: #15171a;
+        border: 1px solid #3b4048;
+        border-radius: 6px;
+        font-family: Consolas, "Courier New", monospace;
+        font-size: 0.9rem;
+        text-align: left;
+      }
+
+      .browser-console.is-open {
+        display: block;
+      }
+
+      .console-row {
+        padding: 0.25rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+      }
+
+      .console-row.log {
+        color: #e8f0f2;
+      }
+
+      .console-row.info {
+        color: #71c7ec;
+      }
+
+      .console-row.warn {
+        color: #ffd166;
+      }
+
+      .console-row.error {
+        color: #ff6b6b;
+      }
+    </style>
+  </head>
+  <body class=" ">
+    <div class="content">
+      <hgroup>
+        <h1 class="text-center">Esercizi slide</h1>
+        <h2 class="text-center"><a href="index.html">(go home ->)</a></h2>
+      </hgroup>
+      <main class="flex">
+        <!-- esercizio 1A -->
+        <article>
+          <h3 class="text-center">Console browser</h3>
+          <p class="text-center">
+            Clicca il pulsante per aprire una console nella pagina.
+          </p>
+          <button id="apriConsole" type="button">Apri console</button>
+          <div
+            id="consoleOutput"
+            class="browser-console"
+            aria-live="polite"
+          ></div>
+        </article>
+      </main>
+    </div>
+    <script defer>
+      const apriConsole = document.getElementById("apriConsole");
+      const consoleOutput = document.getElementById("consoleOutput");
+
+      function formatConsoleValue(value) {
+        if (typeof value === "string") {
+          return value;
+        }
+
+        if (value instanceof Error) {
+          return value.stack || value.message;
+        }
+
+        try {
+          return JSON.stringify(value, null, 2);
+        } catch (error) {
+          return String(value);
+        }
+      }
+
+      function writeToPageConsole(method, values) {
+        const methodName = String(method);
+
+        if (methodName === "clear") {
+          consoleOutput.innerHTML = "";
+          return;
+        }
+
+        const row = document.createElement("div");
+        const knownMethods = ["log", "info", "warn", "error"];
+        row.className =
+          "console-row " +
+          (knownMethods.includes(methodName) ? methodName : "log");
+        row.textContent = values.map(formatConsoleValue).join(" ");
+
+        consoleOutput.appendChild(row);
+        consoleOutput.scrollTop = consoleOutput.scrollHeight;
+      }
+
+      window.proxy = new Proxy(console, {
+        get(target, property) {
+          const originalValue = target[property];
+
+          if (typeof originalValue !== "function") {
+            return originalValue;
+          }
+
+          return function (...values) {
+            writeToPageConsole(property, values);
+            originalValue.apply(target, values);
+          };
+        },
+      });
+      const ponsole = window.proxy;
+
+      apriConsole.addEventListener("click", function () {
+        consoleOutput.classList.add("is-open");
+        runner(ponsole);
+      });
+    </script>
+    <!-- Script esercizio -->
+    <script>
+      function runner(console) {
+        console.log(`Effettuare la somma dei numeri negativi e positivi separatamente, si vada da -20 a +20`);
+
+        let negativi = 0;
+        let positivi = 0;
+        for (let i = -20; i <= 20; i++) {
+          if (i < 0) {
+            negativi += i;
+          } else {
+            positivi += i;
+          }
+        }
+        console.log(`La somma dei numeri negativi è ${negativi}`);
+        console.log(`La somma dei numeri positivi è ${positivi}`);
+              
+      }
+    </script>
+  </body>
+</html>
