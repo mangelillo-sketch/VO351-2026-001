@@ -1,0 +1,26 @@
+<html>
+    <head></head>
+
+    <body>
+        <script>
+            var numeri = [1, 28, 67, 90, 85, 7438];
+            var numeroDaCercare;
+            contatoreAzzeramenti = 0;
+
+            console.log(numeri);
+            do{
+                numeroDaCercare = prompt("Leggi il numero");
+
+                for(let i = 0; i < numeri.length; i ++){
+                    if(numeri[i]%numeroDaCercare == 0 && numeri[i] != 0){
+                        numeri[i] = 0;
+                        
+                        contatoreAzzeramenti ++;
+                    }
+                }
+            }while(contatoreAzzeramenti<numeri.length);
+            console.log(numeri);
+
+        </script>
+    </body>
+</html>
