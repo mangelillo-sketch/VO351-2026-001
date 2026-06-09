@@ -1,0 +1,54 @@
+<!DocumentType html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script type="text/javascript">
+
+            var teoria = 6;
+            var pratica = 24;
+
+            var totale = teoria + pratica;
+
+            if (teoria <= 0 && totale >= 18) {
+                console.log("Studente bocciato");
+            }
+            else if (teoria <= 0 && pratica < 18) {
+                console.log("Studente bocciato");
+            }
+            else if (teoria > 0 && totale < 18) {
+                console.log("Studente bocciato");
+            }
+            else if (totale == 31 || totale == 32) {
+                console.log("Congratulazioni: 30 e lode");
+            }
+            else {
+                console.log("Studente promosso con voto: " + totale);
+            }
+
+            /* si può unire le prime tre in unica condizione facendo così:
+                if (teoria <= 0 || totale < 18) {
+                console.log("Studente bocciato");
+                }
+                 else if (totale == 31 || totale == 32) {
+                console.log("Congratulazioni: 30 e lode");
+                }
+                else {
+                console.log("Studente promosso con voto: " + totale);
+                } 
+
+             o anche così:
+                if((teoria<=0 && totale >18)||(teoria >0 && pratica <18)||(totale > 0 && totale <18));
+                console.log("Sei bocciato");
+
+               else if (totale == 31 || totale == 32)
+                console.log("Congratulazioni: 30 e lode");
+
+                else{
+                    console.log("Voto finale:" + totale);
+                } */
+
+        </script>
+    </body>
+</html>

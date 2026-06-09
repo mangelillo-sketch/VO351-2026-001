@@ -1,0 +1,32 @@
+<!DocumentType html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script type="text/javascript">
+
+            var a = 1;
+            var b = 20;
+
+            for (var i = a; i <= b; i++) {
+
+            var primo = true;
+
+            if (i < 2) {
+            primo = false;}
+
+            for (var j = 2; j < i; j++)
+            {
+            if (i % j == 0)
+            {primo = false;}
+            }
+
+            if (primo == true) {
+        console.log(i);
+        }
+        }
+
+        </script>
+    </body>
+</html>
