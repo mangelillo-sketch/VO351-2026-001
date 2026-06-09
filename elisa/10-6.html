@@ -1,0 +1,69 @@
+<!DocumentType html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script type="text/javascript">
+         var arrayPrincipale = [];
+            var numeriScelti = [3, 12, 25, 40, 41, 55, 60, 70, 82, 90];
+
+            var numeroCasuale;
+            var giaPresente;
+            var contatoreUguali = 0;
+
+            // Creo array principale con 10 numeri casuali da 1 a 90 senza ripetizioni
+            while(arrayPrincipale.length < 10) {
+
+                numeroCasuale = Math.floor(Math.random() * 90) + 1;
+                giaPresente = false;
+
+                for(var i = 0; i < arrayPrincipale.length; i++) {
+                    if(arrayPrincipale[i] == numeroCasuale) {
+                        giaPresente = true;
+                    }
+                }
+
+                if(giaPresente == false) {
+                    arrayPrincipale[arrayPrincipale.length] = numeroCasuale;
+                }
+            }
+
+            console.log("Array principale:");
+            console.log(arrayPrincipale);
+
+            console.log("Numeri scelti:");
+            console.log(numeriScelti);
+
+            // Controllo quanti numeri scelti sono presenti nell'array principale
+            for(var i = 0; i < numeriScelti.length; i++) {
+
+                for(var j = 0; j < arrayPrincipale.length; j++) {
+
+                    if(numeriScelti[i] == arrayPrincipale[j]) {
+                        contatoreUguali++;
+                    }
+
+                }
+
+            }
+
+            console.log("Numeri uguali trovati: " + contatoreUguali);
+
+            // Controllo il risultato
+            if(contatoreUguali == 2) {
+                console.log("Hai fatto ambo");
+            } else if(contatoreUguali == 3) {
+                console.log("Hai fatto terna");
+            } else if(contatoreUguali == 4) {
+                console.log("Hai fatto quaterna");
+            } else if(contatoreUguali == 5) {
+                console.log("Hai fatto cinquina");
+            } else if(contatoreUguali == 10) {
+                console.log("Hai fatto tombola");
+            } else {
+                console.log("Mi dispiace, hai perso!");
+            }
+        </script>
+    </body>
+</html>

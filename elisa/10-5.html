@@ -1,0 +1,60 @@
+<!DocumentType html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script type="text/javascript">
+            /*
+            var Numeri = [];
+            var a= 2;
+            //var Input = prompt("Inserisci un numero da 1 a 50");
+
+            for(var i=0; i<100; i++) {
+                var numeroCasuale = Math.floor(Math.random() * 50) + 1;
+                Numeri[i]= numeroCasuale;
+             inserimento di numeri casuali all'interno dell'array
+            Inoltre potevo scrivere: Numeri[i]= Math.floor(Math.random() * 50) + 1; senza creare la variabile numeroCasuale 
+            
+    
+            }
+
+            console.log(Numeri);*/
+
+            var numeri = [];
+            var numeroDaCercare;
+            var contatoreAzzeramenti = 0;
+
+            for(var i = 0; i < 100; i++) {
+                numeri[i] = Math.floor(Math.random() * 50) + 1;
+            }
+
+            console.log("Array iniziale:");
+            console.log(numeri);
+
+            do {
+                numeroDaCercare = prompt("Inserisci un numero");
+
+                for(var i = 0; i < numeri.length; i++) {
+                    if(numeri[i] % numeroDaCercare == 0 && numeri[i] != 0) 
+                    {
+                        numeri[i] = 0;
+                        contatoreAzzeramenti++;
+                    }
+                }
+
+                console.log("Array aggiornato:");
+                console.log(numeri);
+
+            } 
+            
+            while(contatoreAzzeramenti < numeri.length);
+
+            console.log("Array finale:");
+            console.log(numeri);
+        
+            
+           
+        </script>
+    </body>
+</html>
