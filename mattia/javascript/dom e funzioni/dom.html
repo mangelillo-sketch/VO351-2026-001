@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+
+    <body>
+        <div id="mainelement"><h2>Titolo h2</h2>
+            <span>1 Lorem ipsum dolor sit amet</span>
+            <span>2 Lorem ipsum dolor sit amet</span>
+            <span>3 Lorem ipsum dolor sit amet</span>
+            <span>4 Lorem ipsum dolor sit amet</span>
+            <span>5 Lorem ipsum dolor sit amet</span>
+        </div>
+        <div id="mainelement" class="element">
+            <span>1 Lorem ipsum dolor sit amet</span>
+            <span class="element">2 Lorem ipsum dolor sit amet</span>
+            <span>3 Lorem ipsum dolor sit amet</span>
+            <span>4 Lorem ipsum dolor sit amet</span>
+            <span>5 Lorem ipsum dolor sit amet</span>
+        </div>
+        <div id="mainelement" class="element">
+            <span class="element">1 Lorem ipsum dolor sit amet</span>
+            <span>2 Lorem ipsum dolor sit amet</span>
+            <span>3 Lorem ipsum dolor sit amet</span>
+            <span>4 Lorem ipsum dolor sit amet</span>
+            <span>5 Lorem ipsum dolor sit amet</span>
+        </div>
+
+
+        
+        <script type="text/javascript">
+            var div = document.getElementsByTagName("div");
+            var h2 = document.getElementsByTagName("h2");
+            var element = document.getElementsByClassName("element");
+            var id = document.getElementById("mainelement");
+            var sel1 = document.querySelector("div.element > span");
+            var selAll = document.querySelectorAll("div.element > span");
+
+            /*console.log(div[0]);
+            console.log(h2);
+            console.log(element);
+            console.log(id);
+            console.log(sel1);
+            console.log(selAll);*/
+
+            /*sel1.setAttribute("style", "color: darkred;font-size: 1.5em;");
+            sel1.innerHTML="<em> Testo in corsivo</em>";
+            
+            for (const el of selAll) {
+                //console.log(el);
+                el.setAttribute("style", "color: darkred;font-size: 1.5em;");
+            }*/
+           
+            console.log(div);
+            console.log(div[0].childNodes[0]);
+            console.log(div[0].firstChild);
+            console.log(div[0].firstChild.nextSibling.nextSibling.nextSibling.nextSibling);
+            console.log(div[0].lastChild.previousSibling);
+
+        </script>   
+    </body>
+</html>

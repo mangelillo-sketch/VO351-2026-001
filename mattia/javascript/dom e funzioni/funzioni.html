@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+
+    <body>
+        <script type="text/javascript">
+            /*
+            Function declaration
+            function nome_funzione(parametri){
+                return valore_restituito_Dalla_funzione; (opzionale)
+            }
+            
+            Arrow function (ES6+)
+            const nome = (parametri) => valore_di_ritorno;
+
+            //Function expression
+            const nome = function(parametri){
+                return ....;
+            };
+            */
+
+            //definisco la funzione somma
+            function somma(a=0, b=0){
+                return a+b;
+            }
+            function sommaAvanzata(){
+                var parametri = arguments;
+                var somma = 0;
+                for (const element of parametri) {
+                    somma += element;
+                }
+
+                return somma;
+            }
+
+            //richiamo la funzione somma
+            var ris = somma(10, 5);
+
+            console.log(ris);
+            console.log(somma(107, 5));
+            console.log(somma(10, 5));
+            console.log(somma(10, 5, 4, 5, 7, 7));
+            console.log(somma(10));
+            console.log("---------------------------------");
+            console.log(sommaAvanzata(10));
+            console.log(sommaAvanzata(10, 2, 3));
+            console.log(sommaAvanzata(10, 2));
+            console.log(sommaAvanzata(10, 5, 6, 7));
+            console.log(sommaAvanzata());
+
+        </script>   
+    </body>
+</html>
