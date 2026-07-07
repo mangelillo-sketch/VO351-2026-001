@@ -1,0 +1,95 @@
+<!-- DOM – Document Object Model -->
+Per poter selezionare un elemento del DOM ci sono diversi metodi:
+document.getElementByID(id): per selezionare l'elemento attraverso l'attributo id
+document.getElementsByClassName(css_class): restituisce tutti gli elementi che hanno la classe CSS passata come parametro
+document.getElementByTagName(tag): seleziona tutti gli elementi trovati attraverso il nome del tag HTML (div, p, h1, ecc.)
+document.querySelector(selettore): seleziona il primo elemento che trova attraverso il selettore CSS passato come parametro
+document.querySelectorAll(selettore): funziona come il precedente con l'eccezione che seleziona TUTTI gli elementi trovati attraverso il selettore CSS passato come parametro
+<!-- ESEMPIO PRATICO -->
+<h1>DOM - Selezionare elementi</h1>
+
+<div id="miodiv">
+    <h2 class="sottotitolo">Sottotitolo h2_1</h2>
+    <h2 class="sottotitolo">Sottotitolo h2_2</h2>
+    <h2>Sottotitolo h2_3</h2>
+    <h3 class="sottotitolo">Sottotitolo h3_1</h3>
+    <h3>Sottotitolo h3_2</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis deserunt aspernatur cupiditate voluptatibus dolores delectus iusto inventore! Ipsa, quae laborum!</p>
+</div>
+
+<script type="text/javascript">
+    //Restituisce solamente il div com id="miodiv"
+    var mioDiv = document.getElementById("miodiv");
+    //Restituisce TUTTI i tag h2 e h3
+    var sottotitoli = document.getElementsByClassName("sottotitolo");
+    //Restituisce il primo elemento h2 con l'attributo class="sottotitolo"
+    var sottotitolo_h2 = document.querySelector("h2.sottotitolo");
+    //Restituisce TUTTI gli elementi h2 con l'attributo class="sottotitolo"
+    var sottotitoli_h2 = document.querySelectorAll("h2.sottotitolo");
+    //Restituisce l'elemento p
+    var p = document.getElementsByTagName("p")
+</script>
+
+<!-- COME MODIFICARE GLI ELEMENTI DEL DOM -->
+Una volta ottenuti i riferimento di uno o più elementi è possibile modificare il loro contenuto o altre caratteristiche attraverso degli attributi specifici:
+innerHTML:  Modifica il contenuto del tag
+setAttribute(attrName, value): Setta un valore per un specifico attributo
+
+<h1>DOM - Modifica elementi</h1>
+
+<h2>Sottotitolo h2</h2>
+<h3>Sottotitolo h3</h3>
+
+<script type="text/javascript">
+    var h2 = document.querySelector("h2");
+    h2.innerHTML = "Nuovo sottotitolo h2";
+    h2.setAttribute("style", "background-color: red");
+</script>
+
+<!-- NAVIGARE ALL'INTERNO DEL DOM -->
+childNodes: restituisce tutti gli elementi figli
+firstChild: restituisce il primo elemento figlio
+lastChild: restituisce l'ultimo elemento figlio
+nextSibling(): restituisce l'elemento fratello successivo
+previousSibling(): restituisce l'elemento fratello precedente
+<!-- ESEMPIO PRATICO -->
+<div id="maindiv">
+    <div class="div1">DIV 1</div>
+    <div class="div1">DIV 2</div>
+    <div class="div1">DIV 3</div>
+    <div class="div1">DIV 4</div>
+</div>
+
+<script type="text/javascript">
+    //Seleziona tutti i DIV all'interno del div con id="maindiv"
+    var divChild = document.getElementById("maindiv").childNodes;
+    //Seleziona il primo elemento filgio all'interno del div con id="maindiv"
+    var divFirstChild = document.getElementById("maindiv").firstChild;
+    //Seleziona l'ultimo elemento figlio all'interno del div con id="maindiv"
+    var divLastChild = document.getElementById("maindiv").lastChild;
+    //Seleziona l'elemento successivo al primo elemento figlio del div con id="maindiv"
+    var divNext = document.getElementById("maindiv").firstChild.nextSibling;
+    //Seleziona l'elemento precedente all'ultimo elemento figlio del div con id="maindiv"
+    var divPrev = document.getElementById("maindiv").lastChild.previousSibling;
+</script>
+
+Con Javascript è anche possibile aggiungere/rimuovere elementi e attributi all'interno del DOM avendo immediatamente un impatto visivo nella pagina HTML.
+createElement() Crea un nuovo elemento
+createAttribute() Aggiunge un attributo all'elemento
+setAttributeNode() Aggiunge l'attributo ad un elemento
+appendChild() Aggiunge il nuovo elemento alla fine dei nodi figli
+insertBefore(nuovo_elemento, posizione) Aggiunge il nuovo elemento prima dell'elemento selezionato
+replaceChild(nuovo_elemento, posizione) Rimpiazza un elemento con un altro
+removeChild() Elimina un elemento dal DOM
+<!-- ESEMPI -->
+<div id="mainDiv"></div>
+
+<script type="text/javascript">
+    var mainDiv = document.getElementById("mainDiv");
+    var img = document.createElement("img");
+    var scrAttr = document.createAttribute("src");
+    scrAttr.value = "default.png";
+    img.setAttributeNode(scrAttr);
+
+    mainDiv.appendChild(img);
+</script>

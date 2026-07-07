@@ -1,11 +1,28 @@
-// ESERICIZO 1
-var a = 10;
+// ESERICIZO 2
 
-if(a <= 9)
-    console.log("È una cifra");
-if(a <= 99 && a > 9)
-    console.log("Sono 2 cifre");
-if(a <= 999 && a > 99)
-    console.log("Sono 3 cifre");
-if(a <=9999 && a > 999)
-    console.log("Sono 4 cifre");
+var a = prompt();
+var contatore = 1;
+var cifra = 0;
+do{
+    contatore = contatore *10;
+    cifra ++
+}
+while(a/contatore >= 1);
+
+console.log(cifra)
+
+// ESERCIZIO 8
+
+var votoOrale = 8;
+var votoScritto = 20;
+
+var votoFinale = votoOrale + votoScritto;
+
+if((votoOrale <= 0 && votoFinale > 18)||(votoOrale <= 0 && votoScritto < 18)||(votoOrale > 0 && votoFinale <18))
+    console.log("Sei bocciato!");
+ else if(votoFinale == 31 || votoFinale == 32)
+    console.log("Congratulazioni: 30 e lode!");
+else{
+    console.log("Il voto finale è:" + votoFinale);
+}
+
