@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script>
+            //Costruttore
+            /*function persona(nome, cognome) {
+                //Attributi
+                this.nome = nome;
+                this.cognome = cognome;
+                this.indirizzo = "";
+                this.email = "";
+
+                //Metodi
+                this.mostraNomeCompleto = function() {
+                    return this.nome + " " + this.cognome;
+                };
+            }
+
+            var marioRossi = new persona("Mario", "Rossi");
+            marioRossi.email = "mariorossi@gmail.com";
+            var giuseppeVerdi = new persona("Giuseppe", "Verdi");
+
+            var marioRossi1 = persona();
+
+            console.log(marioRossi);
+            console.log(marioRossi.mostraNomeCompleto());
+            console.log(giuseppeVerdi);
+            console.log(marioRossi1);//undefined perché non esiste un costruttore vuoto
+            */
+            
+            function persona2(nome, cognome) {
+                "use strict"
+
+                this.nome = nome;
+                this.cognome = cognome;
+                this.indirizzo = "";
+                this.email = "";
+                this.mostraNomeCompleto = function() {
+                    return this.nome + " " + this.cognome;
+                };
+            }
+
+            var persona1 = new persona2("Alessandro", "Manzoni");
+            console.log(persona1);
+            
+            var persona2 = persona2("Cristiano", "Ronaldo");
+            console.log(persona2);
+
+
+        </script>
+    </body>
+</html>

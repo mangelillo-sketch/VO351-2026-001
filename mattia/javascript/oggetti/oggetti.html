@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script>
+            /*var marioRossi = {
+                nome : "Mario",
+                cognome : "Rossi",
+                cellulare : "1234567890",
+                email : "mariorossi@email.it",
+                "codice-fiscale" : "NJFKDO",
+                setEmail : function(email){
+                    this.email = email;
+                }
+            };
+
+            marioRossi.setEmail("nuovaEmail@gmail.com");
+            console.log(marioRossi.nome);
+            console.log(marioRossi.cognome);
+            console.log(marioRossi.email);
+            console.log(marioRossi.cellulare);
+            console.log(marioRossi["codice-fiscale"]);*/
+
+            var calcolatrice = {
+                //Proprietà
+                risultato : 0,
+
+                //Metodi
+                somma : function(n1, n2){
+                    this.risultato = n1 + n2;
+                },
+                getRisultato : function(){
+                    return this.risultato;
+                },
+                toString : function(){//overriding
+                    return "oggetto calcolatrice";
+                }
+            };
+            var calcolatriceScientifica = {
+                risultato : 0,
+                funzione : {
+                    x : "",
+                    y : "",
+                    z : ""
+                },
+                somma : function(n1, n2){
+                    calcolatrice.somma(n1, n2);
+                    this.risultato = calcolatrice.getRisultato();
+                },
+            };
+
+            calcolatrice.differenza = function(n1, n2){
+                this.risultato = n1-n2;
+            }
+
+            calcolatrice.somma(2, 5);
+            var ris = calcolatrice.getRisultato();
+            console.log(ris);
+
+            calcolatrice.differenza(2, 5);
+            ris = calcolatrice.getRisultato();
+            console.log(calcolatrice.toString());
+        </script>
+    </body>
+</html>

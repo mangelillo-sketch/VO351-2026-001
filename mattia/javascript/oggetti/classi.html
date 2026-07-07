@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script>
+            // > E6
+           class Persona{
+                constructor(nome, cognome){
+                    this.nome    = nome;
+                    this.cognome = cognome;
+                    this.email   = "";
+                    this.indirizzo = "";
+                }
+
+                //metodi
+                mostraNomeCompleto = function() {
+                    return this.nome + " " + this.cognome;
+                };
+                toString = function(){
+                    return this.mostraNomeCompleto() + " " + this.email;
+                }
+
+                //metodi getter
+                get nome(){return this.nome;}
+                get cognome(){return this.cognome;}
+                get email(){return this.email;}
+                get indirizzo(){return this.indirizzo;}
+
+                //metodi setter
+                set nome(valore){this.nome = valore;}
+                set cognome(valore){this.cognome = valore;}
+                set indirizzo(valore){this.indirizzo = valore;}
+                /*set email(valore){
+                    var emailReg = "/\w+@\w+\.\w{2,4}/i";
+                    if(emailReg.test(valore)){
+                        this.email = valore;
+                    }else{
+                        console.log("Email non valida");
+                    }
+                    
+                }*/
+           }
+
+           var marioRossi = new Persona("Mario", "Rossi");
+
+           console.log(marioRossi);
+
+           //Ereditarietà
+           class studente extends Persona{
+                constructor(nome, cognome, email, matricola){
+                    super(nome, cognome);
+                    super.email = email;
+                    this.matricola = matricola;
+                }
+           }
+        </script>
+    </body>
+</html>
