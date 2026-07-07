@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Eventi in Javascript</title>
+        <style>
+            div{
+                width: 150px;
+                aspect-ratio: 1/1;
+                box-shadow: 0 0 5px red;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <img id="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsubI1xnS2EsbFC7IKOtHXy3o2yp5zNGHX8-mLk-0nVw&s" />
+
+        <div class="cliccami">Clicca qui</div>
+        <div class="cliccami">Clicca qui</div>
+        <div class="cliccami">Clicca qui</div>
+        <div class="cliccami">Clicca qui</div>
+        <div class="cliccami">Clicca qui</div>
+        <div class="cliccami">Clicca qui</div>
+
+        <script>
+            var elementi = document.getElementsByClassName("cliccami");
+            
+            for(let elToClick of elementi){
+                elToClick.addEventListener("click", ()=>{
+                    alert("CLICCATO");
+                });
+            }
+
+            var image = document.getElementById("image");
+            image.addEventListener("load", ()=>{
+                alert("Immagine caricata");
+            });
+
+        </script>
+    </body>
+</html>

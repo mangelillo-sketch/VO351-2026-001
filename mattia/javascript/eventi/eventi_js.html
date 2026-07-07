@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Eventi in Javascript</title>
+    </head>
+    <body>
+
+        <div id="cliccami" 
+            style="border: 1px solid; width: 150px;height: 150px;">
+
+            Aggiungi un nuovo div
+
+        </div>
+
+        <div onclick="alert('CLICK')">CLICCA QUI</div>
+
+        <script>
+            var div = document.getElementById("cliccami");//recupero l'elemento
+            //Lego l'elemento ad un evento specifico
+            /*div.addEventListener("click", ()=>{
+                alert("Hai cliccato sul box");
+            });*/
+            div.onclick = ()=>{
+                let body = document.getElementsByTagName("body");
+                let nuovoEl = document.createElement("div");
+                let text = document.createTextNode("Testo del div aggiunto");
+                nuovoEl.append(text);
+
+                body[0].append(nuovoEl);
+
+            };
+            /*div.onmouseenter = ()=>{
+                console.log("Sei entrato nel box");
+            };
+            div.onmouseout = ()=>{
+                console.log("Sei uscito dal box");
+            };*/
+        </script>
+    </body>
+</html>

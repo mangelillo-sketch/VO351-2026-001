@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Eventi in Javascript</title>
+        <style>
+            div{
+                width: 150px;
+                aspect-ratio: 1/1;
+                box-shadow: 0 0 5px red;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <input type="text" id="text" value="" />
+
+        <script>
+            var txt = document.getElementById("text");
+            txt.addEventListener("keydown", (e)=>{
+                //console.log("keydown");
+            });
+            txt.addEventListener("keyup", (e)=>{
+                let valIn = e.target.value;
+
+                console.log(valIn);
+            });
+            txt.addEventListener("keypress", (e)=>{
+                /*if(e.charCode == 112){
+                    console.log("print...");
+                }
+                console.log(e.charCode);*/
+            });
+        </script>
+    </body>
+</html>
