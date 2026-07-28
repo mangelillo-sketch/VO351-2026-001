@@ -18,11 +18,15 @@
             var txt = document.getElementById("text");
             txt.addEventListener("keydown", (e)=>{
                 //console.log("keydown");
+                var elemento = e.target;
+                
+                console.log(txt);
+                console.log(elemento);
             });
             txt.addEventListener("keyup", (e)=>{
-                let valIn = e.target.value;
+                /*let valIn = e.target.value;
 
-                console.log(valIn);
+                console.log(valIn);*/
             });
             txt.addEventListener("keypress", (e)=>{
                 /*if(e.charCode == 112){

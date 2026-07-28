@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Eventi in Javascript</title>
+    </head>
+    <body>
+
+        <div id="cliccami" 
+            style="border: 1px solid; width: 150px;height: 150px;">
+            <button>Cliccami 1</button>
+            <button>Cliccami 2</button>
+            <button>Cliccami 3</button>
+            <button>Cliccami 4</button>
+            <button>Cliccami 5</button>
+            <button>Cliccami 1</button>
+            <button>Cliccami 2</button>
+            <button>Cliccami 3</button>
+            <button>Cliccami 4</button>
+            <button>Cliccami 5</button>
+            <button>Cliccami 1</button>
+            <button>Cliccami 2</button>
+            <button>Cliccami 3</button>
+            <button>Cliccami 4</button>
+            <button>Cliccami 5</button>
+            <button>Cliccami 1</button>
+            <button>Cliccami 2</button>
+            <button>Cliccami 3</button>
+            <button>Cliccami 4</button>
+            <button>Cliccami 5</button>
+        </div>
+
+        <button id="btn">Button esterno</button>
+
+        <script>
+           var elementoDaCliccare = document.querySelectorAll("#cliccami > button");
+
+           for(let i=0; i<elementoDaCliccare.length; i ++){
+                elementoDaCliccare[i].addEventListener("click", esecuzione);
+           }
+
+           var btn = document.getElementById("btn");
+           btn.addEventListener("click", esecuzione);
+
+
+            function esecuzione(e){
+                const caratteri= "0123456789ABCDEF";//#AABBCC
+                let ash = "#";
+                var colore = ash;
+                for(let i=0;i<6;i ++){
+                    colore += caratteri[Math.floor(Math.random()*16)];
+                }
+                e.target.style.color = colore;
+
+                console.log(e.target);
+            }
+        </script>
+    </body>
+</html>

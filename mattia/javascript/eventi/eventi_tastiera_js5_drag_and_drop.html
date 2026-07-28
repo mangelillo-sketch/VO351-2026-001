@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Eventi in Javascript</title>
+        <style>
+            div{
+                width: 250px;
+                height: 250px;
+                background-color: orange;
+            }
+        </style>
+    </head>
+    <body>
+        <img id="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7P9NiruM4qUZmpH-Hnyl31gDc2mts429qxU2IkTBWJg&s=10" 
+            draggable="true" />
+
+        <div id="divTarget">
+
+        </div>
+            
+
+        <script>
+
+            var img = document.getElementById("img");
+            var divTarget = document.getElementById("divTarget");
+
+            img.ondragstart = function(e) {
+                //console.log(e.dataTransfer);
+
+                e.dataTransfer.setData("text", e.target.id);
+            }
+
+            divTarget.ondragover = function(e) {
+                //console.log(e.target);
+                e.target.className = "overClass";
+                e.preventDefault();
+            }
+            divTarget.ondrop = function(e) {
+                var data = e.dataTransfer.getData("text");
+                console.log(data);
+                e.target.appendChild(document.getElementById(data));
+            }
+
+
+        </script>
+    </body>
+</html>
