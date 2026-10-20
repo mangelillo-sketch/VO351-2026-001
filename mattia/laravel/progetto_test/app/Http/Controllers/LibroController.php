@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Libro;
+use Illuminate\Foundation\Http\FormRequest;
 
 class LibroController extends Controller
 {
