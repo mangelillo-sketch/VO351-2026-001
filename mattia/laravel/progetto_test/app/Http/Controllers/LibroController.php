@@ -9,58 +9,50 @@ use Illuminate\Foundation\Http\FormRequest;
 class LibroController extends Controller
 {
     public function index(Request $request){
+        //SELECT * FROM libri;
         $libri = Libro::all();
 
-        //Visualizza la pagina index
-        return view(
-            'libro.index', 
-            [
-                "libri" => $libri,
-            ]
-        );
+        return view('libro.index', [
+            'libri' => $libri
+        ]);
     }
 
-    public function store(StoreArticoloRequest $request): RedirectResponse
-    {
-        // Se arriviamo qui, i dati sono già stati validati con successo
-        $datiValidati = $request->validated(); // Solo i campi validati
+    public function create(Request $request){
+        
+        try{
+            if($request->isMethod('post')){
+                $validated = $request->validate([
+                    'titolo'    => 'required|string|max:255',
+                    'isbn'      => 'required|string|max:16',
+                    'prezzo'    => 'required|numeric|min:0',
+                ]);
 
-        // Logica di business (slug, flag, ecc.)
-        $datiValidati['slug'] = Str::slug($datiValidati['titolo']);
-        $datiValidati['pubblicato'] = $request->has('pubblicato');
+                $libro = new Libro();
+                $libro->titolo = $validated['titolo'];
+                $libro->isbn = $validated['isbn'];
+                $libro->prezzo = $validated['prezzo'];
+                $libro->save();
 
-        Articolo::create($datiValidati); // Mass Assignment sicuro
+                return redirect()->route(
+                        'libri.view',
+                        [
+                            'id' => $libro->identificativo,
+                        ]
+                    )
+                    ->with(['success' => 'Libro inserito con successo.']);
+            }
+        }catch(QueryException $e){
+            return redirect()->back()->with(['error' => 'Errore nell\'inserimento del libro.']);
+        }
 
-        return redirect()->route('articoli.index')
-                         ->with('messaggio_successo', 'Articolo creato!');
+        return view('libro.create');
     }
-}
 
-class StoreArticoloRequest extends FormRequest
-{
- /** Autorizza la richiesta (autenticazione, permessi) */
- public function authorize(): bool
- {
-    return true; // Usa policy o gate per logiche complesse
- }
+    public function view(Request $request){
+        $libro = Libro::find($request->query('id'));
 
- /** Regole di validazione applicate ai dati in ingresso */
- public function rules(): array
- {
-    return [
-    'titolo' => 'required|string|min:5|max:255',
-    'contenuto' => 'required|string|min:10',
-    'pubblicato' => 'nullable|boolean'
-    ];
- }
-
- /** Messaggi di errore personalizzati (opzionale) */
- public function messages(): array
- {
-    return [
-    'titolo.required' => 'Il campo titolo è obbligatorio.',
-    'titolo.min' => 'Il titolo deve contenere almeno 5 caratteri.',
-    'contenuto.required' => 'Il contenuto non può essere vuoto.',
-    ];
- }
+        return view('libro.view', [
+            'libro' => $libro
+        ]);
+    }
 }

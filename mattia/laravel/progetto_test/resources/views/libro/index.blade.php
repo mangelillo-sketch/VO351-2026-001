@@ -5,8 +5,21 @@
 
 <h1>PAGINA LIBRI</h1>
 
-<pre>
-    <?php print_r($libri); ?>
-</pre>
+<table>
+    <tr>
+        <th>identificativo </th>
+        <th>Titolo</th>
+        <th>isbn</th>
+        <th>prezzo</th>
+    </tr>
+    @foreach ($libri as $libro)
+        <tr>
+            <td>{{ $libro->identificativo  }}</td>
+            <td>{{ $libro->titolo }}</td>
+            <td>{{ $libro->isbn }}</td>
+            <td>{{ $libro->prezzo }}</td>
+        </tr>
+    @endforeach
+</table>        
 
 @stop
