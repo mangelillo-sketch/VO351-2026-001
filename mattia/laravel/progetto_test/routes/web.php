@@ -1,21 +1,20 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LibroController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/libri', [
-    LibroController::class, 'index'
-]);
-Route::get('/libri/create', [
-    LibroController::class, 'create'
-])->name("libri.create");
-Route::post('/libri/create', [
-    LibroController::class, 'create'
-])->name("libri.create.post");
-Route::get('/libri/view', [
-    LibroController::class, 'view'
-])->name("libri.view");
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
