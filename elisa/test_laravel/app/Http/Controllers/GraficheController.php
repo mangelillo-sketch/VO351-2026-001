@@ -20,4 +20,50 @@ class GraficheController extends Controller
 
         return redirect()->route('progetti.index');
     }
+
+    public function edit($id)
+ {
+    $progetto = Grafiche::find($id);
+
+    if ($progetto === null) {
+        return redirect()->route('progetti.index');
+    }
+
+    return view('progetti.edit', [
+        'progetto' => $progetto
+    ]);
+ }
+
+ public function update(StoreGraficheRequest $request, $id)
+ {
+    $progetto = Grafiche::find($id);
+
+    if ($progetto === null) {
+        return redirect()->route('progetti.index');
+    }
+
+    $validated = $request->validated();
+
+    $progetto->titolo = $validated['titolo'];
+    $progetto->descrizione = $validated['descrizione'];
+    $progetto->categoria = $validated['categoria'];
+    $progetto->anno = $validated['anno'];
+
+    $progetto->save();
+
+    return redirect()->route('progetti.index');
+ }
+
+ public function destroy($id)
+ {
+    $progetto = Grafiche::find($id);
+
+    if ($progetto === null) {
+        return redirect()->route('progetti.index');
+    }
+
+    $progetto->delete();
+
+    return redirect()->route('progetti.index');
+ }
 }
