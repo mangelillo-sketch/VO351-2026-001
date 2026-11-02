@@ -1,0 +1,20 @@
+/*RESET BASE*/
+    body{
+        margin: 0;
+        font-family: "inter", sans-serif;
+    }
+
+div{
+    margin: 100;
+}    
+
+button{
+    background-color: brown;
+    color: aliceblue;
+    padding: 10px 20px;
+}
+
+img{
+    width: 200px;
+    height: 200px;
+}
