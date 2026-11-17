@@ -1,0 +1,221 @@
+/* ============================================================================
+   FILE: src/assets/css/Pagina1.module.css
+   SCOPO DIDATTICO: CSS MODULE ISOLATO - TEMA VIOLA (Pagina1.tsx).
+   
+   PERCHÉ USARE I CSS MODULES (.module.css)?
+   In CSS classico, le classi sono globali: se scrivi '.card' sia qui che in Pagina 2,
+   l'ultimo foglio caricato sovrascrive il primo in tutta l'app!
+   
+   Con l'estensione '.module.css':
+   Vite trasforma ogni classe in un nome univoco (es. 'Pagina1_card__1a2b3').
+   In questo modo lo stile di Pagina 1 è al 100% INDIPENDENTE e ISOLATO,
+   anche se Pagina 2 usa gli stessi identici nomi di classe!
+   ============================================================================ */
+
+/* --------------------------------------------------------------------------
+   PASSO 1: SCHEDA PRINCIPALE (Tema Viola / Indaco)
+   #8b5cf6 è il codice colore esadecimale (HEX) che genera il bordo viola.
+   -------------------------------------------------------------------------- */
+.card {
+  background: var(--bg);
+  border: 2px solid #8b5cf6;                                 /* 👈 BORDO VIOLA DELLA SCHEDA */
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.15);     /* Ombra con alone viola tenue */
+  position: relative;
+  text-align: left;
+}
+
+/* Badge distintivo in cima alla scheda */
+.badge {
+  display: inline-block;
+  padding: 0.3rem 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(139, 92, 246, 0.15);
+  color: #7c3aed;
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  border-radius: 999px;
+  margin-bottom: 0.8rem;
+}
+
+/* Titolo della pagina */
+.titolo {
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #6d28d9;
+}
+
+.description {
+  color: var(--text);
+  margin-bottom: 1.8rem;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   PASSO 2: BOX DI AVVISO PER RISPOSTA RICEVUTA DA PAGINA 2
+   -------------------------------------------------------------------------- */
+.alertSuccess {
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #065f46;
+}
+
+.alertTitle {
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.alertBody {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+/* --------------------------------------------------------------------------
+   PASSO 3: FORM DI COMPOSIZIONE DEL LINK
+   -------------------------------------------------------------------------- */
+.formSection {
+  background: rgba(139, 92, 246, 0.05);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.formSection h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #6d28d9;
+}
+
+/* Raggruppamento etichetta + campo input */
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.inputGroup label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  color: var(--text-h);
+}
+
+.inputGroup input {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--bg);
+  color: var(--text-h);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+/* Bordo evidenziato quando il campo riceve il focus del cursore */
+.inputGroup input:focus {
+  border-color: #8b5cf6;
+}
+
+/* --------------------------------------------------------------------------
+   PASSO 4: ANTEPRIMA DEL LINK GENERATO
+   Mostra allo studente la stringa URL che verrà trasportata via link.
+   -------------------------------------------------------------------------- */
+.urlPreview {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.85rem;
+}
+
+.urlPreview span {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.urlPreview code {
+  background: var(--bg);
+  border: 1px dashed #8b5cf6;
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  color: #7c3aed;
+  font-family: var(--mono);
+  word-break: break-all;
+}
+
+/* --------------------------------------------------------------------------
+   PASSO 5: PULSANTE LINK PRINCIPALE
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  transition: all 0.2s ease;
+  background: #7c3aed;                                       /* Sfondo viola principale */
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #6d28d9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   PASSO 6: LINK RAPIDI PREDEFINITI (Griglia di test)
+   -------------------------------------------------------------------------- */
+.quickLinks h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.85rem;
+  color: var(--text-h);
+}
+
+.linksGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.85rem;
+}
+
+.quickLinkItem {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text-h);
+  transition: all 0.2s ease;
+}
+
+.quickLinkItem strong {
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+}
+
+.quickLinkItem span {
+  font-size: 0.8rem;
+  color: var(--text);
+  word-break: break-all;
+}
+
+.quickLinkItem:hover {
+  border-color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.1);
+  transform: translateY(-2px);
+}

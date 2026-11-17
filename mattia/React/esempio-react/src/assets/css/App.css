@@ -1,0 +1,110 @@
+/* ============================================================================
+   FILE: src/assets/css/App.css
+   SCOPO DIDATTICO: STILE DEL LAYOUT GENERALE DELL'APPLICAZIONE (App.tsx).
+   
+   CONCETTI CHIAVE:
+   1. Importato in App.tsx: controlla la struttura esterna della Single Page Application.
+   2. Flexbox Sticky Footer: 'min-height: 100vh' combinato con 'margin-top: auto'
+      nel footer garantisce che il footer rimanga sempre ancorato sul fondo.
+   3. Navbar con NavLink: la classe '.nav-link.active' viene aggiunta dinamicamente
+      da react-router-dom quando ci si trova sulla rispettiva pagina.
+   ============================================================================ */
+
+/* --------------------------------------------------------------------------
+   PASSO 1: CONTENITORE CENTRALE DELL'APPLICAZIONE
+   Imposta una larghezza massima leggibile, centratura orizzontale e padding.
+   -------------------------------------------------------------------------- */
+.app-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Occupa almeno il 100% dell'altezza della finestra del browser */
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   PASSO 2: HEADER E TITOLI DELL'APPLICAZIONE
+   -------------------------------------------------------------------------- */
+.app-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.app-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-h); /* Usa la variabile definita in index.css */
+}
+
+.subtitle {
+  font-size: 1.05rem;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   PASSO 3: BARRA DI NAVIGAZIONE E COMPONENTE NavLink
+   La barra di navigazione raggruppa i collegamenti interni dell'applicazione.
+   -------------------------------------------------------------------------- */
+.nav-bar {
+  display: inline-flex;
+  gap: 0.5rem;
+  background: var(--code-bg);
+  padding: 0.4rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+/* Stile base di ciascun collegamento (NavLink) */
+.nav-link {
+  padding: 0.6rem 1.1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+/* Effetto hover al passaggio del mouse */
+.nav-link:hover {
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+
+/*
+   STATO ATTIVO (.active):
+   Viene applicato da react-router-dom grazie alla prop:
+   className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
+   Evidenzia chiaramente la pagina in cui lo studente si trova attualmente.
+*/
+.nav-link.active {
+  background: var(--accent);
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: var(--shadow);
+}
+
+/* --------------------------------------------------------------------------
+   PASSO 4: CONTENITORE PRINCIPALE DELLE ROTTE
+   -------------------------------------------------------------------------- */
+.main-content {
+  margin-bottom: 2rem;
+  flex: 1; /* Permette al contenuto di espandersi spingendo il footer sul fondo */
+}
+
+/* --------------------------------------------------------------------------
+   PASSO 5: FOOTER COMUNE
+   'margin-top: auto' fa sì che il footer rimanga sempre in basso anche
+   se la pagina ha poco contenuto.
+   -------------------------------------------------------------------------- */
+.app-footer {
+  margin-top: auto;
+  padding-top: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text);
+  border-top: 1px solid var(--border);
+}

@@ -1,0 +1,94 @@
+/* ============================================================================
+   FILE: src/assets/css/index.css
+   SCOPO DIDATTICO: FOGLIO DI STILE GLOBALE (Application-Wide Styles).
+   
+   CONCETTI CHIAVE:
+   1. Punto di Ingresso: Viene importato in main.tsx, prima di montare React nel DOM.
+   2. Variabili CSS (:root): Definisce i colori e i font globali dell'intera app.
+   3. color-scheme: Informa il browser che il sito supporta sia il tema chiaro che scuro.
+   4. Media Query (prefers-color-scheme: dark): Interroga il sistema operativo dell'utente
+      per attivare la modalità scura automaticamente, senza bisogno di JavaScript.
+   ============================================================================ */
+
+/* --------------------------------------------------------------------------
+   PASSO 1: TEMA CHIARO (Impostazioni predefinite a livello di :root)
+   :root rappresenta l'elemento radice del documento (equivalente a <html>,
+   ma con specificità più alta). Qui definiamo le Custom Properties (variabili CSS).
+   -------------------------------------------------------------------------- */
+:root {
+  /* Palette cromatica di base (Tema Chiaro) */
+  --text: #6b6375;              /* Colore del testo standard */
+  --text-h: #08060d;            /* Colore dei titoli principali */
+  --bg: #fff;                   /* Sfondo generale della pagina */
+  --border: #e5e4e7;            /* Colore dei bordi e divisori */
+  --code-bg: #f4f3ec;           /* Sfondo dei blocchi di codice e box secondari */
+  --accent: #aa3bff;            /* Colore primario d'accento (viola Vite/React) */
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+  --social-bg: rgba(244, 243, 236, 0.5);
+  
+  /* Ombreggiatura predefinita per schede e pulsanti */
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  /* Font tipografici moderni del sistema operativo */
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  /* Applicazione globale delle variabili alla radice del documento */
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  
+  /* Dice al browser che questo documento supporta sia la modalità chiara che scura */
+  color-scheme: light dark;
+  
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Adattamento reattivo della dimensione base del font su schermi medi */
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   PASSO 2: SUPPORTO AUTOMATICO ALLA MODALITÀ SCURA (Dark Mode)
+   La media query 'prefers-color-scheme: dark' viene valutata direttamente dal
+   browser: se Windows/macOS ha il tema scuro attivo, sovrascrive le variabili
+   --bg, --text e --border con tonalità scure, senza richiedere codice JS.
+   -------------------------------------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;            /* Testo grigio chiaro per contrasto su fondo scuro */
+    --text-h: #f3f4f6;          /* Titoli bianco fumo */
+    --bg: #16171d;              /* Sfondo scuro moderno */
+    --border: #2e303a;          /* Bordi scuri desaturati */
+    --code-bg: #1f2028;         /* Sfondo scuro per box e codice */
+    --accent: #c084fc;          /* Colore d'accento più chiaro e leggibile */
+    --accent-bg: rgba(192, 132, 252, 0.15);
+    --accent-border: rgba(192, 132, 252, 0.5);
+    --social-bg: rgba(47, 48, 58, 0.5);
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   PASSO 3: RESET BASE PER IL CORPO DELLA PAGINA (body)
+   -------------------------------------------------------------------------- */
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+}

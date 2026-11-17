@@ -1,0 +1,288 @@
+/* ============================================================================
+   FILE: src/assets/css/Pagina2.module.css
+   SCOPO DIDATTICO: CSS MODULE ISOLATO - TEMA SMERALDO (Pagina2.tsx).
+   
+   IL CONFRONTO CHIAVE DA MOSTRARE ALLA CLASSE:
+   Questo file definisce classi con gli STESSI IDENTICI NOMI di Pagina1.module.css:
+   - .card
+   - .badge
+   - .titolo
+   - .btn
+   - .formSection
+   
+   In un sito normale senza CSS Modules, questo creerebbe un gravissimo conflitto
+   di stili. Con i CSS Modules, invece:
+   - Pagina 1 riceverà la classe 'Pagina1_card__hash1' (con bordo VIOLA #8b5cf6)
+   - Pagina 2 riceverà la classe 'Pagina2_card__hash2' (con bordo VERDE #10b981)
+   Risultato: Stili 100% indipendenti, puliti e modulari!
+   ============================================================================ */
+
+/* --------------------------------------------------------------------------
+   PASSO 1: SCHEDA PRINCIPALE (Tema Verde Smeraldo)
+   #10b981 è il codice colore esadecimale (HEX) che genera il bordo verde smeraldo.
+   -------------------------------------------------------------------------- */
+.card {
+  background: var(--bg);
+  border: 2px solid #10b981;                                 /* 👈 BORDO VERDE SMERALDO */
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.15);     /* Ombra con alone verde smeraldo */
+  position: relative;
+  text-align: left;
+}
+
+/* Badge distintivo a tema verde */
+.badge {
+  display: inline-block;
+  padding: 0.3rem 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(16, 185, 129, 0.15);
+  color: #059669;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  border-radius: 999px;
+  margin-bottom: 0.8rem;
+}
+
+/* Titolo della pagina destinatario */
+.titolo {
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #059669;
+}
+
+.description {
+  color: var(--text);
+  margin-bottom: 1.8rem;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   PASSO 2: BOX PER I DATI RICEVUTI VIA LINK (useSearchParams)
+   Evidenzia chiaramente allo studente i dati estratti dalla barra degli indirizzi.
+   -------------------------------------------------------------------------- */
+.receivedBox {
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-left: 6px solid #10b981;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.receivedHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.receivedHeader h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #059669;
+}
+
+.receivedContent {
+  margin-bottom: 1rem;
+}
+
+.highlightText {
+  color: #047857;
+  font-weight: 700;
+}
+
+/* Citazione evidenziata con il testo del messaggio */
+.quoteBox {
+  margin: 0.5rem 0 0 0;
+  padding: 0.8rem 1rem;
+  background: var(--bg);
+  border-radius: 8px;
+  border-left: 3px solid #10b981;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--text-h);
+}
+
+/* --------------------------------------------------------------------------
+   PASSO 3: AVVISO PER NAVIGAZIONE SENZA PARAMETRI NELL'URL
+   -------------------------------------------------------------------------- */
+.alertWarning {
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: #92400e;
+}
+
+.alertTitle {
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.alertBody {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.inlineLink {
+  color: #059669;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   PASSO 4: FORM DI RISPOSTA VERSO PAGINA 1
+   -------------------------------------------------------------------------- */
+.formSection {
+  background: var(--code-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  margin-bottom: 2rem;
+}
+
+.formSection h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #059669;
+}
+
+.subtext {
+  font-size: 0.9rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.inputGroup label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  color: var(--text-h);
+}
+
+.inputGroup input {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--bg);
+  color: var(--text-h);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+/* Bordo verde quando il campo riceve il focus */
+.inputGroup input:focus {
+  border-color: #10b981;
+}
+
+/* --------------------------------------------------------------------------
+   PASSO 5: ANTEPRIMA DEL LINK DI RITORNO
+   -------------------------------------------------------------------------- */
+.urlPreview {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.85rem;
+}
+
+.urlPreview span {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.urlPreview code {
+  background: var(--bg);
+  border: 1px dashed #10b981;
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  color: #059669;
+  font-family: var(--mono);
+  word-break: break-all;
+}
+
+/* --------------------------------------------------------------------------
+   PASSO 6: PULSANTE LINK PRINCIPALE (Verde Smeraldo)
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  transition: all 0.2s ease;
+  background: #059669;                                       /* Sfondo verde smeraldo */
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #047857;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   PASSO 7: LINK RAPIDI DI RISPOSTA PREDEFINITI
+   -------------------------------------------------------------------------- */
+.quickLinks h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.85rem;
+  color: var(--text-h);
+}
+
+.linksGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.85rem;
+}
+
+.quickLinkItem {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text-h);
+  transition: all 0.2s ease;
+}
+
+.quickLinkItem strong {
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+}
+
+.quickLinkItem span {
+  font-size: 0.8rem;
+  color: var(--text);
+  word-break: break-all;
+}
+
+.quickLinkItem:hover {
+  border-color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+  transform: translateY(-2px);
+}
+
+.simpleReturn {
+  border-style: dashed;
+}
