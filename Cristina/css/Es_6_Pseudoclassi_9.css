@@ -1,0 +1,21 @@
+input:focus{
+    background-color: lightgoldenrodyellow;
+    border: 2px solid blue;
+}
+
+input:disabled{
+    background-color: lightgray;
+    cursor: not-allowed;
+}
+
+input:enabled{
+    border: 2px solid green;
+}
+
+input:hover{
+    box-shadow: 0 0 5px purple;
+}
+
+input:checked{
+    color: antiquewhite;
+}
