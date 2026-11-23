@@ -1,0 +1,14 @@
+h1 {
+    background-color: beige;
+    color: brown;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 700;
+}
+
+div {
+    font-size: xx-large;
+}
+
+div:not(.red) {
+    background-color: rgba(255, 0, 0, 0.534);
+}
