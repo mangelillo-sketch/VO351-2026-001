@@ -1,0 +1,5 @@
+section > div:not(.green):nth-child(even) {
+    background-color: crimson;
+    color: white;
+    font-size: 22px;
+}
