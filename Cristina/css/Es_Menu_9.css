@@ -1,0 +1,39 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 5px;
+    padding: 0;
+}
+
+nav li {
+    flex: 1;
+}
+
+nav a {
+    display: block;
+    background-color: #d47019;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px;
+    border-bottom: 5px solid #30b1d8;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: #50b8d8;
+    border-bottom-color: #d47019;
+}
+
+section {
+    padding: 30px;
+    margin-top: 20px;
+    min-height: 180px;
+    background-color: #f5f5f5;
+}
